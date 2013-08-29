@@ -1,0 +1,175 @@
+/************************************************************************
+// For extensive details about creating a Populr theme, please visit
+// http://developers.populr.me/theming
+*/
+
+
+// You must import variables.less before importing populr_mixins.less
+@import 'variables';
+@import 'http://populr.me/assets/developers/populr_mixins.less';
+@import 'preboot';
+@import 'lato';
+@import 'kreon';
+
+
+// Call preboot.less's reset to reduce browser inconsistencies
+#reset > .global-reset();
+
+
+/////////////////////////////////////////////////////////////////////////
+// Typography defaults
+
+@text-color: #111;
+// @custom-color is defined in variables.less
+@link-color: @custom-color;
+
+// Title text defaults
+// @headline-font-family is defined in variables.less
+.headline-text() {
+  font-family: @headline-font-family;
+  font-size: 24px;
+  line-height: 1.2;
+}
+.pop-title-text() {
+  font-family: @headline-font-family;
+  font-size: 56px;
+  line-height: 1.1;
+}
+
+// Body text defaults
+@body-font-family: Arial, sans-serif;
+.body-text() {
+  font-family: @body-font-family;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+#pop {
+  font-family: @body-font-family;
+  color: @text-color;
+  i, em { font-style: italic; }
+  b, strong { font-weight: 700; }
+
+  a {
+    color: @link-color;
+    &:active { color: lighten(@link-color, 20%); }
+  }
+}
+
+// End typography defaults
+/////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////
+// Structure
+
+// Content wrapper
+#main-content { margin: 0 auto; }
+
+// Logo helper
+#pop-logo { margin: 20px auto; }
+
+// Pop title
+#pop-title {
+  max-width: 960px;
+  padding: 0 20px;
+  margin: 50px auto;
+
+  .pop-title-text();
+  text-align: center;
+}
+
+.columnizer-col {
+  background-color: #bbb;
+  padding: 10px 20px;
+}
+
+// Assets
+.asset-title {
+  .headline-text();
+  margin: 10px 0;
+}
+
+.description, .body {
+  .body-text();
+
+  margin: 10px 0;
+  ul, ol { margin: .5em 0 .5em 1.5em; }
+  ul li { list-style-type: disc; }
+  ol li { list-style-type: decimal; }
+}
+
+// Text asset styling
+.asset-type-text.asset-size-1 {
+  .asset-title {
+    font-size: 36px;
+    text-align: center;
+  }
+  .description, .body, .description li, .body li,  {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
+// Image asset styling
+#populr > #image-slider-themes > .basic();
+
+// Document asset styling
+.documents {
+  margin: 10px auto;
+
+  li {
+    margin-bottom: 1em;
+
+    a {
+      text-decoration: none;
+      line-height: 1.2;
+
+      i.icon { font-style: normal !important; }
+    }
+  }
+}
+
+// Clearfix
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: ' ';
+  clear: both;
+  height: 0;
+}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+// End structure
+/////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////
+// Mobile
+//
+// The Populr mobile reset will handle some of the basics of mobilizing 
+// your theme, such as stacking all of the assets vertically and scaling 
+// them to 100% of the width of their container. However, you'll have to 
+// fine tune the styling to make your theme look really good on mobile
+// devices.
+
+@media screen and (max-width: 960px) {
+  #populr > .mobile-reset();
+
+  // Edit the grid for mobile
+  .columnizer-row-inner, #pop-title { max-width: 640px; }
+  .columnizer-col { margin: 0 10px 20px !important; }
+
+  // Edit the typography for mobile
+  #pop-title { font-size: 40px !important; }
+  .asset-title { font-size: 24px !important; }
+  .description, .body, .description li, .body li { font-size: 14px !important; }
+  .asset-title, .description, .body, .description li, .body li { text-align: left !important; }
+}
+
+@media screen and (max-width: 600px) {
+  #pop-title { font-size: 32px !important; }
+  .asset-title { font-size: 20px !important; }
+}
