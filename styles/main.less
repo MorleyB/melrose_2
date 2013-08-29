@@ -19,7 +19,7 @@
 /////////////////////////////////////////////////////////////////////////
 // Typography defaults
 
-@text-color: #111;
+@text-color: #fff;
 // @custom-color is defined in variables.less
 @link-color: @custom-color;
 
@@ -67,29 +67,30 @@
 // Content wrapper
 #main-content { margin: 0 auto; }
 
+// Default Background
+body .fullbg-container {
+  margin: 0 auto;
+}
+
+.fullbg-container {
+  width: 960px;
+  height: 250px;
+  top: 0px;
+}
+
+
 // Tight Margins
 .columnizer-col {
   background-color: #bbb;
   padding: 20px 20px;
-  margin: 0px;
-}
-
-.columnizer-cols2 .columnizer-col {
-  width: 440px;
-}
-
-.columnizer-cols3 .columnizer-col {
-  width: 280px;
-  margin-left: 0px;
 }
 
 
+// Banner Region
 #banner {
   width: 960px;
   margin: 0 auto;
 }
-
-
 
 // Logo helper
 #pop-logo {

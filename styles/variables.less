@@ -17,7 +17,7 @@
 // pop. Populr automatically calculates the average color of any 
 // background image selected by the user, and stores that average 
 // color in @background-color.
-@background-color: #ccc;
+@background-color: #763C80;
 
 
 /************************************************************************
@@ -54,6 +54,7 @@
 // elements yourself.
 */
 
+
 // 0 = Populr legacy grid, and use Populr's default icon & button styling
 // 1 = Define your own grid, style icons & buttons yourself
 @populr-theme-version: 1;
@@ -65,12 +66,11 @@
 }
 .columnizer-col {
 	float: left;
-	margin: 10px;
+	margin: 0;
 
 	.columnizer-cols1 & { width: 920px;	}
-	.columnizer-cols2 & { width: 430px;	}
-	.columnizer-cols3 & { width: 266px;
-		margin-left: 11px;
+	.columnizer-cols2 & { width: 440px;	}
+	.columnizer-cols3 & { width: 280px;
 	}
 
 	&:first-child { margin-left: 0; }
