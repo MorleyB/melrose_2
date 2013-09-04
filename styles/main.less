@@ -83,12 +83,13 @@ body {
     scrollbar-face-color: rgba(255, 255, 255, .1);
 }
 
-// Default Background
+// Banner Image Color Overlay
 body .fullbg-container {
   margin: 0 auto;
   max-width: 960px;
   img {
-    background: lighten(@background-color-palette, 25%);
+    background-color: @background-color-palette;
+    opacity: .25;
   }
 }
 
@@ -109,10 +110,6 @@ p { font-size: 16px; }
   min-height: 250px;
   margin: 70px auto 0 auto;
   overflow: hidden;
-  img {
-    background-color: @background-color-palette;
-    opacity: .25;
-  }
 }
 
 // Logo helper
