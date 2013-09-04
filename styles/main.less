@@ -5,11 +5,14 @@
 
 
 // You must import variables.less before importing populr_mixins.less
+@import 'kreon';
 @import 'variables';
 @import 'http://populr.me/assets/developers/populr_mixins.less';
 @import 'preboot';
 @import 'lato';
-@import 'kreon';
+
+// remove these before deploying ...........
+@import 'palette-default';
 
 
 // Call preboot.less's reset to reduce browser inconsistencies
@@ -29,10 +32,11 @@
   font-family: @headline-font-family;
   font-size: 24px;
   line-height: 1.2;
+  text-shadow: 0px 4px 2px @background-color;
 }
 
 // Body text defaults
-@body-font-family: 'latoregular', sans-serif;
+@body-font-family: 'latolight', sans-serif;
 .pop-title-text() {
   font-family: @body-font-family;
   font-size: 18px;
@@ -48,12 +52,20 @@
 #pop {
   font-family: @body-font-family;
   color: @text-color;
-  i, em { font-style: italic; }
+  em { font-style: italic; }
   b, strong { font-weight: 700; }
+
+  a.link-btn {
+    background-color: @background-color !important;
+    margin-right: 10px !important;
+    margin-left: 0 !important;
+  }
+  a.link-btn:hover {  background-color: darken(@background-color, 2%) !important; }
 
   a {
     color: @link-color;
     &:active { color: lighten(@link-color, 20%); }
+    &:hover { color: darken(@link-color, 8%); }
   }
 }
 
@@ -67,26 +79,36 @@
 // Content wrapper
 #main-content { margin: 0 auto; }
 
+body {
+    scrollbar-face-color: rgba(255, 255, 255, .1);
+}
+
 // Default Background
 body .fullbg-container {
   margin: 0 auto;
-  width: 960px;
-  height: 250px;
-  top: 0px;
+  max-width: 960px;
+  img {
+    opacity: .25;
+  }
 }
 
+p { font-size: 16px; }
 
-// Tight Margins
-.columnizer-col {
-  background-color: #bbb;
-  padding: 20px 20px;
+// Custom Theme Modifications Scrollbar Webkit Only
+::-webkit-scrollbar {
+  background-color: rgba(255, 255, 255, .3);
 }
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.4);
+} /* this will style the thumb, ignoring the track */
 
 
 // Banner Region
 #banner {
   width: 960px;
-  margin: 0 auto;
+  min-height: 250px;
+  margin: 70px auto 0 auto;
+  overflow: hidden;
 }
 
 // Logo helper
@@ -106,7 +128,6 @@ body .fullbg-container {
   .pop-title-text();
 }
 
-
 // Assets
 .asset-title {
   .headline-text();
@@ -124,6 +145,7 @@ body .fullbg-container {
 
 // Text asset styling
 .asset-type-text.asset-size-1 {
+  background-color: @large-text-asset-background;
   .asset-title {
     font-size: 36px;
     text-align: center;
@@ -136,19 +158,101 @@ body .fullbg-container {
 
 // Image asset styling
 #populr > #image-slider-themes > .basic();
+.asset.asset-type-imagegroup {
+  padding: 0;
+  &:hover { opacity: 25%; }
+}
+.imagegroup-container {
+  padding: 20px 30px;
+  z-index: 101;
+  position: absolute;
+  overflow: auto;
+}
+.asset.asset-type-imagegroup.asset-size-1, .asset.asset-type-imagegroup.asset-size-2 {
+  .imagegroup-container { margin-top: -275px; height: 200px; }
+}
+.asset.asset-type-imagegroup.asset-size-3 {
+  .imagegroup-container { margin-top: -155px; height: 90px; }
+}
+// Image Hover style
+.populr-image-slider:hover {
+  opacity: .25;
+}
+.zoom-glass {
+  i { font-style: normal !important; }
+  position: absolute;
+  right: 0;
+  padding: 20px 20px 0 0;
+}
+.zoom-text {
+  margin-top: 10px;
+  font-weight: lighter;
+}
 
 // Document asset styling
+.asset.asset-type-documentgroup.asset-size-1 {
+  .document-container {
+    width: 280px;
+    float:left;
+    margin: 20px 20px 20px 0;
+    padding-top: 15px;
+    .document-title-text {
+      width: 200px;
+      float: right;
+    }
+  }
+}
+.asset.asset-type-documentgroup.asset-size-2 {
+  .document-container {
+    margin: 20px 0 20px 0;
+    width: 420px;
+    float:left;
+    .document-title-text {
+      width: 337px;
+      float: right;
+    }
+  }
+}
+.asset.asset-type-documentgroup.asset-size-3 {
+  .document-container {
+    margin: 20px 0 20px 0;
+    width: 260px;
+    float:left;
+    .document-title-text {
+      width: 178px;
+      float: right;
+    }
+  }
+}
+
 .documents {
   margin: 10px auto;
-
   li {
     margin-bottom: 1em;
-
     a {
       text-decoration: none;
       line-height: 1.2;
-
       i.icon { font-style: normal !important; }
+      .document-title-text {
+        .headline-text();
+        color: @text-color;
+        &:hover { color: darken(@text-color, 16%); }
+      }
+    }
+  }
+  .download-icon-background {
+    margin: -15px 20px 0 0;
+    height: 30px;
+    width: 30px;
+    padding: 15px;
+    background-color: lighten(@background-color, 50%);
+    float: left;
+    border-radius: 50%;
+    i {
+      margin-left: -2px;
+      color: @text-color;
+      text-shadow: 0px 4px 2px @background-color;
+      font-style: normal !important;
     }
   }
 }
@@ -182,7 +286,7 @@ body .fullbg-container {
   #populr > .mobile-reset();
 
   // Edit the grid for mobile
-  .columnizer-row-inner, #pop-title { max-width: 640px; }
+  .columnizer-row-inner, #pop-title, #banner { max-width: 640px; }
   .columnizer-col { margin: 0 !important; }
 
   // Edit the typography for mobile

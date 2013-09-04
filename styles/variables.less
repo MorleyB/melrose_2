@@ -3,7 +3,6 @@
 // http://developers.populr.me/theming
 */
 
-
 // Use this statement to import Google Web Fonts
 // @import '//fonts.googleapis.com/css?family=Open+Sans:300,700spo&.css';
 
@@ -17,7 +16,7 @@
 // pop. Populr automatically calculates the average color of any 
 // background image selected by the user, and stores that average 
 // color in @background-color.
-@background-color: #763C80;
+@background-color: #361241;
 
 
 /************************************************************************
@@ -26,14 +25,14 @@
 */
 
 // @headline-font-family is changed with the Font dropdown 
-@headline-font-family: 'kreonbold', serif;
+@headline-font-family: 'kreonregular', serif;
 
 // @custom-color is changed with the custome color picker in the Color 
 // dropdown. The color picker will only be available to your users if 
 // you set it up as one of your color palettes. See the Populr themer 
 // documentation for details on how this works:
 // http://developers.populr.me/theming/
-@custom-color: #33f;
+@custom-color: #20B0DD;
 
 
 /************************************************************************
@@ -68,13 +67,16 @@
 	float: left;
 	margin: 0;
 
-	.columnizer-cols1 & { width: 920px;	}
-	.columnizer-cols2 & { width: 440px;	}
-	.columnizer-cols3 & { width: 280px;
+	.columnizer-cols1 & { width: 960px;	}
+	.columnizer-cols2 & { width: 480px;	}
+	.columnizer-cols3 & { width: 320px;
 	}
 
 	&:first-child { margin-left: 0; }
 	&:last-child { margin-right: 0; }
+}
+.asset {
+	padding: 30px 30px;
 }
 // clearfix for columnizer rows
 .columnizer-row:after { display: block; visibility: hidden; height: 0; clear: both; content: ' '; }

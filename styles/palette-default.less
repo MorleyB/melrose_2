@@ -6,4 +6,8 @@
 // Populr will throw an error if a theme style file (like this one) is 
 // empty. Therefore, even if you don't use multiple theme styles in your
 // theme, you must have some code in the default theme style file.
-p {}
+
+@large-text-asset-background: #502F62;
+
+.light-shade { background-color: lighten(@background-color, 20%) }
+.dark-shade { background-color: lighten(@background-color, 10%) }
