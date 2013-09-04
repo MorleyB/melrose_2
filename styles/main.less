@@ -88,7 +88,7 @@ body .fullbg-container {
   margin: 0 auto;
   max-width: 960px;
   img {
-    opacity: .25;
+    background: lighten(@background-color-palette, 25%);
   }
 }
 
@@ -113,9 +113,11 @@ p { font-size: 16px; }
 
 // Logo helper
 #pop-logo {
-  margin: 50px auto;
   float: left;
-  max-width: 280px;
+  margin: 55px 0 0 30px;
+  max-width: 275px;
+  max-height: 150px;
+  overflow: hidden;
 }
 
 // Pop title
