@@ -12,7 +12,7 @@
 @import 'lato';
 
 // remove these before deploying ...........
-// @import 'palette-default';
+@import 'palette-default';
 
 
 // Call preboot.less's reset to reduce browser inconsistencies
@@ -32,7 +32,7 @@
   font-family: @headline-font-family;
   font-size: 24px;
   line-height: 1.2;
-  text-shadow: 0px 4px 2px @background-color;
+  text-shadow: 0px 4px 2px @background-color-palette;
 }
 
 // Body text defaults
@@ -56,11 +56,11 @@
   b, strong { font-weight: 700; }
 
   a.link-btn {
-    background-color: @background-color !important;
+    background-color: @background-color-palette !important;
     margin-right: 10px !important;
     margin-left: 0 !important;
   }
-  a.link-btn:hover {  background-color: darken(@background-color, 2%) !important; }
+  a.link-btn:hover {  background-color: darken(@background-color-palette, 2%) !important; }
 
   a {
     color: @link-color;
@@ -245,13 +245,13 @@ p { font-size: 16px; }
     height: 30px;
     width: 30px;
     padding: 15px;
-    background-color: lighten(@background-color, 50%);
+    background-color: lighten(@background-color-palette, 50%);
     float: left;
     border-radius: 50%;
     i {
       margin-left: -2px;
       color: @text-color;
-      text-shadow: 0px 4px 2px @background-color;
+      text-shadow: 0px 4px 2px @background-color-palette;
       font-style: normal !important;
     }
   }
