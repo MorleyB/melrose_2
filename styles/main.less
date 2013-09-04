@@ -109,8 +109,10 @@ p { font-size: 16px; }
   min-height: 250px;
   margin: 70px auto 0 auto;
   overflow: hidden;
-  background-color: @background-color-palette;
-  opacity: .25;
+  img {
+    background-color: @background-color-palette;
+    opacity: .25;
+  }
 }
 
 // Logo helper
@@ -118,6 +120,7 @@ p { font-size: 16px; }
   float: left;
   margin: 55px 0 0 30px;
   overflow: hidden;
+  position: absolute;
 }
 
 // Pop title
@@ -125,9 +128,8 @@ p { font-size: 16px; }
   width: 640px;
   padding: 0 20px;
   margin: 50px auto;
-  float: right;
-
-  .pop-title-text();
+  position: absolute;
+  right: 0;
 }
 
 // Assets
