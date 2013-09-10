@@ -1,0 +1,10 @@
+@large-asset-background: desaturate(lighten(@background-color-palette, 7%), 20%);
+
+@background-color-palette: @custom-color;
+
+@light-background-color-palette: desaturate(lighten(@background-color-palette, 30%), 30%);
+@mid-background-color-palette: desaturate(lighten(@background-color-palette, 5%), 10%);
+
+body {
+	background-color: @background-color-palette !important;
+}
