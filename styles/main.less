@@ -229,7 +229,6 @@ p { font-size: 16px; }
 #populr > #image-slider-themes > .basic();
 .asset.asset-type-imagegroup {
   padding: 0;
-  &:hover { opacity: 25%; }
 }
 .imagegroup-container {
   padding: 20px 30px;
@@ -237,6 +236,7 @@ p { font-size: 16px; }
   position: absolute;
   overflow: auto;
   height: 90px;
+  display: none;
 }
 .asset.asset-type-imagegroup.asset-size-1, .asset.asset-type-imagegroup.asset-size-2 {
   .imagegroup-container { margin-top: -275px; height: 200px; }
@@ -255,12 +255,19 @@ p { font-size: 16px; }
 
 
 // Image Hover style
-.populr-image-slider {
-  &:hover { opacity: .25; }
+.asset-inner {
+  &:hover {
+    .populr-image-slider {
+      opacity: .25;
+    }
+    .imagegroup-container {
+      display: block;
+    }
+  }
 }
+
 .cycle-prev, .cycle-next { display: none; }
 .zoom-glass {
-  display: none;
   i { font-style: normal !important; }
   position: absolute;
   right: 0;
