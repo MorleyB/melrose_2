@@ -49,19 +49,11 @@
   <!-- Put your theme's HTML inside this script tag. The script tag will
        prevent issues with quote escaping and invalid markup. -->
   <script id="theme" type="text/x-handlebars-template">
-    <div id="logo-wrapper">{{logo}}</div>
-
-    {{#region "columnizer" id="logo-region" max_cols="1" max_auto_assets="1" dummy_content="I-1"}}
-
-      {{#asset "imagegroup" size="1"}}
-          {{{imageslider images width="960" height="250" crop-single=true}}}
-        <div class="imagegroup-logo-container clearfix">
-          {{{title}}}
-          {{{description}}}
-        </div>
-      {{/asset}}
-
-    {{/region}}
+    <div id="banner">
+      <div id="banner-color"></div>
+      {{logo max_width=250 max_height=150}}
+      {{{title}}}
+    </div>
 
     {{#region "columnizer" id="main-region" max_cols="3" max_auto_assets="0" dummy_content="T-1|T-1,T-1|T-1,T-1,T-1|I-1|I-2|I-1,I-2|I-1,I-2,I-3|V-1|V-2|V-1,V-2|V-1,V-2,V-3|D-1|D-3|D-1,D-3|D-1,D-2,D-3|E-1|E-2|E-1,E-2|E-1,E-2,E-3"}}
 
