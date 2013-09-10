@@ -12,7 +12,7 @@
 @import 'lato';
 
 // remove these before deploying ...........
-// @import 'palette-default';
+@import 'palette-default';
 
 
 // Call preboot.less's reset to reduce browser inconsistencies
@@ -104,12 +104,26 @@ p { font-size: 16px; }
 } /* this will style the thumb, ignoring the track */
 
 
-// Banner Region
-#banner {
-  width: 960px;
-  min-height: 250px;
-  margin: 70px auto 0 auto;
-  overflow: hidden;
+// Logo Region
+#logo-region {
+  margin-top: 55px;
+}
+
+.imagegroup-logo-container {
+  margin-top: -200px;
+  padding: 20px 30px;
+  z-index: 101;
+  position: absolute;
+  overflow: auto;
+  height: 125px;
+  width: 60%;
+  right: 0;
+  img { opacity: .2 }
+  &:hover { opacity:;}
+}
+
+#main-region {
+  margin-bottom: 75px;
 }
 
 // Logo helper
@@ -122,13 +136,15 @@ p { font-size: 16px; }
 
 // Pop title
 #pop-title {
-  width: 640px;
+  width: 600px;
   padding: 0 20px;
-  margin: 50px auto;
+  margin: 75px 20px 0 0;
   position: absolute;
   right: 0;
   .headline-text()
 }
+
+
 
 // Assets
 .asset-title {
@@ -147,7 +163,7 @@ p { font-size: 16px; }
 
 // Text asset styling
 .asset-type-text.asset-size-1 {
-  background-color: @large-text-asset-background;
+  background-color: @large-asset-background;
   .asset-title {
     font-size: 36px;
     text-align: center;
@@ -158,7 +174,41 @@ p { font-size: 16px; }
   }
 }
 
+
+/////////////////////////////////////////////////////////////////////////
+// Set Background Colors
+
+.columnizer-row-contents-embedgroup, .columnizer-row-contents-documentgroup {
+  .columnizer-col.columnizer-col1 {
+    background-color: @large-asset-background;
+  }
+}
+
+.columnizer-row-contents-text-text, .columnizer-row-contents-documentgroup-documentgroup, .columnizer-row-contents-embedgroup-embedgroup {
+  .columnizer-col.columnizer-col2 {
+    &:first-child { background-color: @light-background-color-palette; }
+    &:last-child { background-color: @mid-background-color-palette; }
+  }
+}
+
+.columnizer-row-contents-text-text-text, .columnizer-row-contents-documentgroup-documentgroup-documentgroup, .columnizer-row-contents-embedgroup-embedgroup-embedgroup {
+  .columnizer-col.columnizer-col3 {
+    &:first-child { background-color: @light-background-color-palette; }
+    &:last-child { background-color: @light-background-color-palette; }
+    background-color: @mid-background-color-palette;
+  }
+}
+
+
+
+
 // Image asset styling
+#logo-region {
+  .populr-image-slider {
+    opacity: .2;
+    &:hover { opacity: .2; }
+  }
+}
 #populr > #image-slider-themes > .basic();
 .asset.asset-type-imagegroup {
   padding: 0;
@@ -169,18 +219,31 @@ p { font-size: 16px; }
   z-index: 101;
   position: absolute;
   overflow: auto;
+  height: 90px;
 }
 .asset.asset-type-imagegroup.asset-size-1, .asset.asset-type-imagegroup.asset-size-2 {
   .imagegroup-container { margin-top: -275px; height: 200px; }
 }
 .asset.asset-type-imagegroup.asset-size-3 {
-  .imagegroup-container { margin-top: -155px; height: 90px; }
+  .imagegroup-container {
+    margin-top: -155px;
+  }
 }
+.small-image {
+  display: none;
+}
+.middle-image {
+  display: none;
+}
+
+
 // Image Hover style
-.populr-image-slider:hover {
-  opacity: .25;
+.populr-image-slider {
+  &:hover { opacity: .25; }
 }
+.cycle-prev, .cycle-next { display: none; }
 .zoom-glass {
+  display: none;
   i { font-style: normal !important; }
   position: absolute;
   right: 0;
@@ -218,11 +281,11 @@ p { font-size: 16px; }
 .asset.asset-type-documentgroup.asset-size-3 {
   .document-container {
     margin: 20px 0 20px 0;
-    width: 260px;
+    width: 200px;
     float:left;
     .document-title-text {
-      width: 178px;
-      float: right;
+      width: 120px;
+      float: left;
     }
   }
 }
@@ -259,6 +322,8 @@ p { font-size: 16px; }
   }
 }
 
+
+
 // Clearfix
 .clearfix:after {
   visibility: hidden;
@@ -288,8 +353,14 @@ p { font-size: 16px; }
   #populr > .mobile-reset();
 
   // Edit the grid for mobile
-  .columnizer-row-inner, #pop-title, #banner { max-width: 640px; }
+  .columnizer-row-inner, #pop-title { max-width: 640px; }
   .columnizer-col { margin: 0 !important; }
+
+  // size 1 image asset fix for mobile
+  .asset.asset-type-imagegroup.asset-size-1 .imagegroup-container {
+    margin-top: -180px;
+    height: 100px;
+  }
 
   // Edit the typography for mobile
   #pop-title { font-size: 40px !important; }

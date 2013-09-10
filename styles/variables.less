@@ -68,12 +68,16 @@
 
 	.columnizer-cols1 & { width: 960px;	}
 	.columnizer-cols2 & { width: 480px;	}
-	.columnizer-cols3 & { width: 320px;
-	}
+	.columnizer-cols3 & {
+    width: 440px;
+    &:first-child { width: 260px; }
+    &:last-child { width: 260px; }
+  }
 
 	&:first-child { margin-left: 0; }
 	&:last-child { margin-right: 0; }
 }
+
 .asset {
 	padding: 30px 30px;
 }
