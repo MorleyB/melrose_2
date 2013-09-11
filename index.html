@@ -81,24 +81,43 @@
         </div>
       {{/asset}}
 
+
       {{#asset "imagegroup" size="2"}}
         <div class="zoom-glass"><i class="icon-search icon-2x"></i><p class="zoom-text">ZOOM</p></div>
-        {{{imageslider images width="480" height="353" crop-single=true}}}
+
+        <div class="populr-image-slider">
+          <div class="slideshow edit-mode" data-cycle-log="false" data-cycle-slides="&gt; .slide" data-cycle-pause-on-hover="true" data-cycle-auto-height="480:353" data-cycle-auto-init="false" data-prevnext-enabled="" data-pager-enabled="" data-enabled="" data-fancybox-enabled="" data-crop-single="true">
+            <div class="slide">
+              <img src="">
+            </div>
+          </div>
+        </div>
+
         <div class="imagegroup-container">
           {{{title}}}
           {{{description}}}
         </div>
       {{/asset}}
 
+
       {{#asset "imagegroup" size="3"}}
         <div class="zoom-glass"><i class="icon-search icon-2x"></i><p class="zoom-text">ZOOM</p></div>
-          <div class="small-image">{{{imageslider images width="240" height="230" crop-single=true}}}</div>
-          <div class="middle-image">{{{imageslider images width="480" height="230" crop-single=true}}}</div>
+
+        <div class="populr-image-slider">
+          <div class="slideshow edit-mode" data-cycle-log="false" data-cycle-slides="&gt; .slide" data-cycle-pause-on-hover="true" data-cycle-auto-height="480:230" data-cycle-auto-init="false" data-prevnext-enabled="" data-pager-enabled="" data-enabled="" data-fancybox-enabled="" data-crop-single="true">
+            <div class="slide">
+              <img src="">
+            </div>
+          </div>
+        </div>
+
         <div class="imagegroup-container">
           {{{title}}}
           {{{description}}}
         </div>
       {{/asset}}
+
+
 
       {{#asset "documentgroup" size="1"}}
         {{{title}}}
