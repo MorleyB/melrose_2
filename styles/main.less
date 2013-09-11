@@ -12,27 +12,33 @@
 @import 'lato';
 
 // remove these before deploying ...........
-@import 'palette-default';
+// @import 'palette-default';
+// @import 'palette-custom';
 
 
 // Call preboot.less's reset to reduce browser inconsistencies
 #reset > .global-reset();
 
-#populr > .link-button(@custom-color);
-#populr > .icon(@custom-color);
+// #populr > .link-button(@custom-color);
+// #populr > .icon(@custom-color);
 #populr > .inline-logo-title();
 
 
 /////////////////////////////////////////////////////////////////////////
 // Typography defaults
 
-@text-color: #fff;
-// @custom-color is defined in variables.less
-.asset-title {
-  #populr > .text-color-over-color(@light-background-color-palette);
+@white: #fff;
+@light-gray: #828282;
+@dark-gray: #333333;
+
+
+// text color variables based on background color
+.asset-title, .document-title-text {
   #populr > .text-color-over-color(@mid-background-color-palette);
 }
-
+.body, .description {
+  #populr > .text-color-over-color(@mid-background-color-palette);
+}
 
 // Title text defaults
 // @headline-font-family is defined in variables.less
@@ -40,7 +46,7 @@
   font-family: @headline-font-family;
   font-size: 24px;
   line-height: 1.2;
-  text-shadow: 0px 4px 2px @background-color-palette;
+  text-shadow: 0px 4px 2px @custom-color;
 }
 
 // Body text defaults
@@ -59,21 +65,20 @@
 
 #pop {
   font-family: @body-font-family;
-  color: @text-color;
+  color: @white;
   em { font-style: italic; }
   b, strong { font-weight: 700; }
 
   a.link-btn {
-    background-color: @background-color-palette !important;
+    background-color: @custom-color !important;
     margin-right: 10px !important;
     margin-left: 0 !important;
   }
-  a.link-btn:hover {  background-color: darken(@background-color-palette, 2%) !important; }
+  a.link-btn:hover {  background-color: darken(@custom-color, 2%) !important; }
 
   a {
     color: @link-color;
-    &:active { color: lighten(@link-color, 20%); }
-    &:hover { color: darken(@link-color, 8%); }
+    &:hover { color: darken(@link-color, 20%); }
   }
 }
 
@@ -95,7 +100,6 @@ body {
 body .fullbg-container {
   margin: 0 auto;
   max-width: 960px;
-  background: #361241;
   img {
     opacity: .25;
   }
@@ -328,7 +332,17 @@ p { font-size: 16px; }
       float: left;
     }
   }
+  .document-container:nth-child(even) {
+    margin: 20px 0 20px 0;
+    width: 440px;
+    float:left;
+    .document-title-text {
+      width: 320px;
+      float: left;
+    }
+  }
 }
+
 
 .documents {
   margin: 10px auto;
@@ -340,8 +354,8 @@ p { font-size: 16px; }
       i.icon { font-style: normal !important; }
       .document-title-text {
         .headline-text();
-        color: @text-color;
-        &:hover { color: darken(@text-color, 16%); }
+        color: @white;
+        &:hover { color: darken(@white, 16%); }
       }
     }
   }
@@ -350,13 +364,10 @@ p { font-size: 16px; }
     height: 30px;
     width: 30px;
     padding: 15px;
-    background-color: lighten(@background-color-palette, 50%);
     float: left;
     border-radius: 50%;
     i {
       margin-left: -2px;
-      color: @text-color;
-      text-shadow: 0px 4px 2px @background-color-palette;
       font-style: normal !important;
     }
   }

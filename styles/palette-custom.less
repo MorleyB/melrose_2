@@ -1,11 +1,20 @@
-@large-asset-background: desaturate(lighten(@background-color-palette, 7%), 20%);
+@large-asset-background: lighten(@custom-color, 7%);
 
-@background-color-palette: @custom-color;
-@link-color: spin(@background-color-palette, 180);
+@link-color: lighten(spin(@custom-color, 120), 40%);
 
-@light-background-color-palette: desaturate(lighten(@background-color-palette, 30%), 30%);
-@mid-background-color-palette: desaturate(lighten(@background-color-palette, 5%), 10%);
+@light-background-color-palette: desaturate(lighten(@custom-color, 30%), 30%);
+@mid-background-color-palette: desaturate(lighten(@custom-color, 5%), 80%);
 
 body {
-	background-color: @background-color-palette !important;
+	background-color: @custom-color !important;
+}
+
+.download-icon-background {
+ background-color: @custom-color;
+ i {
+    margin-left: -2px;
+    color: @white;
+    text-shadow: 0px 4px 2px darken(@custom-color, 20%);
+    font-style: normal !important;
+  }
 }
