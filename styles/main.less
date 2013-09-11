@@ -18,13 +18,20 @@
 // Call preboot.less's reset to reduce browser inconsistencies
 #reset > .global-reset();
 
+#populr > .link-button(@custom-color);
+#populr > .icon(@custom-color);
+#populr > .inline-logo-title();
+
 
 /////////////////////////////////////////////////////////////////////////
 // Typography defaults
 
 @text-color: #fff;
 // @custom-color is defined in variables.less
-#populr > .text-color-over-color(@background-color-palette);
+.asset-title {
+  #populr > .text-color-over-color(@background-color-palette);
+}
+
 
 // Title text defaults
 // @headline-font-family is defined in variables.less
@@ -197,10 +204,6 @@ p { font-size: 16px; }
     font-size: 18px;
     text-align: center;
   }
-}
-
-.asset {
-  #populr > .inline-logo-title();
 }
 
 
