@@ -20,7 +20,6 @@
 #reset > .global-reset();
 
 // #populr > .link-button(@custom-color);
-// #populr > .icon(@custom-color);
 #populr > .inline-logo-title();
 
 
@@ -46,6 +45,13 @@
   font-family: @headline-font-family;
   font-size: 24px;
   line-height: 1.2;
+  text-shadow: 0px 4px 2px @custom-color;
+}
+
+.document-text() {
+  font-family: @headline-font-family;
+  font-size: 16.5px;
+  line-height: 1.5;
   text-shadow: 0px 4px 2px @custom-color;
 }
 
@@ -116,7 +122,11 @@ p { font-size: 16px; }
   background-color: rgba(255, 255, 255, 0.4);
 } /* this will style the thumb, ignoring the track */
 
-
+.pplr-icon {
+  color: @white;
+  &:hover { color: darken(@white, 16%); }
+  text-shadow: 0px 4px 2px @custom-color;
+}
 
 .imagegroup-logo-container {
   margin-top: -200px;
@@ -307,44 +317,54 @@ p { font-size: 16px; }
     padding-top: 15px;
     .document-title-text {
       width: 200px;
-      float: right;
     }
   }
 }
 .asset.asset-type-documentgroup.asset-size-2 {
-  .document-container {
-    margin: 20px 0 20px 0;
+  .documents {
     width: 420px;
-    float:left;
-    .document-title-text {
-      width: 337px;
-      float: right;
+    .document-container {
+      margin: 20px 0 20px 0;
+      float:left;
+      .document-title-text {
+        max-width: 337px;
+        margin-right: 20px;
+      }
+      .download-icon-background {
+        margin-right: 30px;
+      }
     }
   }
 }
 .columnizer-row-inner {
   .asset-container:nth-child(odd) {
     .asset.asset-type-documentgroup.asset-size-3 {
-      .document-container {
-        margin: 20px 0 20px 0;
-        width: 200px;
-        float:left;
-        .document-title-text {
-          width: 120px;
-          float: left;
+      .documents {
+        .document-container {
+          margin: 20px 0 20px 0;
+          width: 185px;
+          float:left;
+          .document-title-text {
+            width: 100px;
+          }
         }
       }
     }
   }
   .asset-container:nth-child(even) {
     .asset.asset-type-documentgroup.asset-size-3 {
-      .document-container {
-        margin: 20px 0 20px 0;
-        width: 440px;
-        float:left;
-        .document-title-text {
-          width: 320px;
-          float: left;
+      .documents {
+        width: 410px;
+        .document-container {
+          margin: 20px 0 20px 0;
+          float:left;
+          .document-title-text {
+            max-width: 300px;
+            margin-right: 20px;
+          }
+          .download-icon-background {
+            margin-right: 30px;
+          }
         }
       }
     }
@@ -354,24 +374,26 @@ p { font-size: 16px; }
 .documents {
   margin: 10px auto;
   li {
+    text-align: right;
     margin-bottom: 1em;
     a {
       text-decoration: none;
       line-height: 1.2;
       i.icon { font-style: normal !important; }
       .document-title-text {
-        .headline-text();
+        padding-top: 18px;
+        float: left;
+        .document-text();
         color: @white;
         &:hover { color: darken(@white, 16%); }
       }
     }
   }
   .download-icon-background {
-    margin: -15px 20px 0 0;
     height: 30px;
     width: 30px;
     padding: 15px;
-    float: left;
+    float: right;
     border-radius: 50%;
     i {
       margin-left: -2px;
