@@ -73,7 +73,10 @@
       {{/asset}}
 
       {{#asset "imagegroup" size="1"}}
-        <div class="zoom-glass"><i class="icon-search icon-2x"></i><p class="zoom-text">ZOOM</p></div>
+        {{#if ../../../settings.fancybox_enabled}}
+          <div class="zoom-glass"><i class="icon-search icon-2x"></i><p class="zoom-text">ZOOM</p></div>
+        {{else}}
+        {{/if}}
         {{{imageslider images width="960" height="360" crop-single=true}}}
         <div class="imagegroup-container clearfix">
           {{{title}}}
@@ -83,8 +86,10 @@
 
 
       {{#asset "imagegroup" size="2"}}
-        <div class="zoom-glass"><i class="icon-search icon-2x"></i><p class="zoom-text">ZOOM</p></div>
-
+        {{#if ../../../settings.fancybox_enabled}}
+          <div class="zoom-glass"><i class="icon-search icon-2x"></i><p class="zoom-text">ZOOM</p></div>
+        {{else}}
+        {{/if}}
         <div class="populr-image-slider">
           <div class="slideshow edit-mode " data-cycle-log="false" data-cycle-slides="&gt; .slide" data-cycle-pause-on-hover="true" data-cycle-auto-height="480:353" data-cycle-auto-init="false" data-prevnext-enabled="" data-pager-enabled="" data-enabled="" data-fancybox-enabled="" data-crop-single="true">
             <div class="slide">
@@ -101,8 +106,10 @@
 
 
       {{#asset "imagegroup" size="3"}}
-        <div class="zoom-glass"><i class="icon-search icon-2x"></i><p class="zoom-text">ZOOM</p></div>
-
+        {{#if ../../../settings.fancybox_enabled}}
+          <div class="zoom-glass"><i class="icon-search icon-2x"></i><p class="zoom-text">ZOOM</p></div>
+        {{else}}
+        {{/if}}
         <div class="populr-image-slider">
           <div class="slideshow edit-mode " data-cycle-log="false" data-cycle-slides="&gt; .slide" data-cycle-pause-on-hover="true" data-cycle-auto-height="240:230" data-cycle-auto-init="false" data-prevnext-enabled="" data-pager-enabled="" data-enabled="" data-fancybox-enabled="" data-crop-single="true">
             <div class="slide">
