@@ -13,7 +13,7 @@
 
 // remove these before deploying ...........
 // @import 'palette-default';
-// @import 'palette-custom';
+@import 'palette-custom';
 
 
 // Call preboot.less's reset to reduce browser inconsistencies
@@ -33,11 +33,11 @@
 
 
 // text color variables based on background color
-.asset-title, .document-title-text {
+.asset-title, .document-title-text, #pop-title {
   #populr > .text-color-over-color(@mid-background-color-palette);
 }
 .body, .description {
-  #populr > .text-color-over-color(@mid-background-color-palette);
+  #populr > .text-color-over-color(@light-background-color-palette);
 }
 
 // Title text defaults
@@ -322,27 +322,34 @@ p { font-size: 16px; }
     }
   }
 }
-.asset.asset-type-documentgroup.asset-size-3 {
-  .document-container {
-    margin: 20px 0 20px 0;
-    width: 200px;
-    float:left;
-    .document-title-text {
-      width: 120px;
-      float: left;
+.columnizer-row-inner {
+  .asset-container:nth-child(odd)
+    .asset.asset-type-documentgroup.asset-size-3 {
+      .document-container {
+        margin: 20px 0 20px 0;
+        width: 200px;
+        float:left;
+        .document-title-text {
+          width: 120px;
+          float: left;
+        }
+      }
     }
   }
-  .document-container:nth-child(even) {
-    margin: 20px 0 20px 0;
-    width: 440px;
-    float:left;
-    .document-title-text {
-      width: 320px;
-      float: left;
+  .asset-container:nth-child(even)
+    .asset.asset-type-documentgroup.asset-size-3 {
+      .document-container {
+        margin: 20px 0 20px 0;
+        width: 440px;
+        float:left;
+        .document-title-text {
+          width: 320px;
+          float: left;
+        }
+      }
     }
   }
 }
-
 
 .documents {
   margin: 10px auto;
