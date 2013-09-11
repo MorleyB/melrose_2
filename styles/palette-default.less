@@ -10,7 +10,8 @@
 
 @background-color-palette: @custom-color;
 
-@link-color: #20B0DD;
+@link-color: darken(spin(@custom-color, 180), 50%);
+// #20B0DD;
 
 @light-background-color-palette: desaturate(lighten(@background-color-palette, 30%), 30%);
 @mid-background-color-palette: desaturate(lighten(@background-color-palette, 5%), 8%);
