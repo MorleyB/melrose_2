@@ -282,11 +282,26 @@ p { font-size: 16px; }
     margin-top: -155px;
   }
 }
-.small-image {
-  display: none;
-}
-.middle-image {
-  display: none;
+
+.columnizer-row-inner {
+  .asset-container:nth-child(odd) {
+    .asset.asset-type-imagegroup.asset-size-3 {
+      .asset-inner {
+        .middle-image {
+          display: none;
+        }
+      }
+    }
+  }
+  .asset-container:nth-child(even) {
+    .asset.asset-type-imagegroup.asset-size-3 {
+      .asset-inner {
+        .small-image {
+          display: none;
+        }
+      }
+    }
+  }
 }
 
 
