@@ -12,8 +12,8 @@
 @import 'lato';
 
 // remove these before deploying ...........
-// @import 'palette-default';
-@import 'palette-custom';
+@import 'palette-default';
+// @import 'palette-custom';
 
 
 // Call preboot.less's reset to reduce browser inconsistencies
@@ -29,11 +29,15 @@
 @white: #fff;
 @light-gray: #828282;
 @dark-gray: #333333;
+@banner-background:  darken(@custom-color, 15%);
 
 
 // text color variables based on background color
-.asset-title, .document-title-text, #pop-title {
+.asset-title, .document-title-text {
   #populr > .text-color-over-color(@mid-background-color-palette);
+}
+#pop-title {
+  #populr > .text-color-over-color(@banner-background);
 }
 .body, .description {
   #populr > .text-color-over-color(@light-background-color-palette);
@@ -159,7 +163,7 @@ p { font-size: 16px; }
   position: absolute;
   top: 0;
   left: 0;
-  background-color: darken(@custom-color, 15%);
+  background-color: @banner-background;
   filter:alpha(opacity=40); /* IE */
   -moz-opacity:0.4; /* Mozilla */
   opacity: 0.4; /* CSS3 */
