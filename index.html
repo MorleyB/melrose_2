@@ -33,6 +33,10 @@
   <!-- <meta itemprop="palette" content="palette-default" title="Default" data-preview="#fff,#000"> -->
   <!-- <meta itemprop="palette" content="palette-custom" data-preview="custom"> -->
   <meta itemprop="palette" content="palette-default" title="Default" data-preview="#361241">
+  <meta itemprop="palette" content="palette-default" title="Black" data-preview="#000000">
+  <meta itemprop="palette" content="palette-default" title="Charcoal" data-preview="#413D3D">
+  <meta itemprop="palette" content="palette-default" title="Smoke" data-preview="#DAD6CA">
+  <meta itemprop="palette" content="palette-default" title="White" data-preview="#ffffff">
   <meta itemprop="palette" content="palette-custom" title="Custom" data-preview="custom">
 
   <!-- Add any styles your theme requires here -->
@@ -73,7 +77,7 @@
       {{/asset}}
 
       {{#asset "imagegroup" size="1"}}
-        {{#if fancybox_enabled}}
+        {{#if lightbox_enabled}}
           <div class="zoom-glass"><i class="icon-search icon-2x"></i><p class="zoom-text">ZOOM</p></div>
         {{else}}
         {{/if}}
@@ -86,7 +90,7 @@
 
 
       {{#asset "imagegroup" size="2"}}
-        {{#if fancybox_enabled}}
+        {{#if lightbox_enabled}}
           <div class="zoom-glass"><i class="icon-search icon-2x"></i><p class="zoom-text">ZOOM</p></div>
         {{else}}
         {{/if}}
@@ -106,7 +110,7 @@
 
 
       {{#asset "imagegroup" size="3"}}
-        {{#if fancybox_enabled}}
+        {{#if lightbox_enabled}}
           <div class="zoom-glass"><i class="icon-search icon-2x"></i><p class="zoom-text">ZOOM</p></div>
         {{else}}
         {{/if}}
