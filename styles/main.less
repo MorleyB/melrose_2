@@ -43,6 +43,9 @@
   #populr > .text-color-over-color(@light-background-color-palette);
 }
 
+// background color assignment base on position
+
+
 // Title text defaults
 // @headline-font-family is defined in variables.less
 .headline-text() {
@@ -88,7 +91,7 @@
 
   a {
     color: @link-color;
-    &:hover { color: darken(@link-color, 20%); }
+    &:hover { color: lighten(@link-color, 20%); }
   }
 }
 
@@ -235,20 +238,19 @@ p { font-size: 16px; }
   }
 }
 
-.columnizer-row-contents-text-text, .columnizer-row-contents-documentgroup-documentgroup, .columnizer-row-contents-embedgroup-embedgroup {
-  .columnizer-col.columnizer-col2 {
-    &:first-child { background-color: @light-background-color-palette; }
-    &:last-child { background-color: @mid-background-color-palette; }
-  }
+
+.columnizer-col.columnizer-col2 {
+  &:first-child { background-color: @light-background-color-palette; }
+  &:last-child { background-color: @mid-background-color-palette; }
 }
 
-.columnizer-row-contents-text-text-text, .columnizer-row-contents-documentgroup-documentgroup-documentgroup, .columnizer-row-contents-embedgroup-embedgroup-embedgroup {
-  .columnizer-col.columnizer-col3 {
-    &:first-child { background-color: @light-background-color-palette; }
-    &:last-child { background-color: @light-background-color-palette; }
-    background-color: @mid-background-color-palette;
-  }
+
+.columnizer-col.columnizer-col3 {
+  &:first-child { background-color: @light-background-color-palette; }
+  &:last-child { background-color: @light-background-color-palette; }
+  background-color: @mid-background-color-palette;
 }
+
 
 
 
