@@ -20,6 +20,7 @@
     $(window).on('resize', _.throttle(fixColumnHeights));
     $('.columnizer-row .asset').live('initialize', _.throttle(fixColumnHeights));
     $('columnizer-row .asset .asset-type-imagegroup').on('change', function() {
+      console.log('changed')
       if ($(this).has('a.fancybox')) {
         $(this).css('zoom-glass', 'display:block')
       }
