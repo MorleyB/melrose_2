@@ -287,7 +287,7 @@ a.link-btn { margin-right: 10px !important; }
 .lt-ie9 {
   .columnizer-cols3 {
     .columnizer-row-inner {
-      .asset-container + .asset-container + .asset-container {
+      .asset-container:first-child, .asset-container + .asset-container + .asset-container {
         background-color: @light-background-color-palette;
         #populr > .link-button(@light-alt-custom-color);
         #populr > .icon(@light-alt-custom-color);
