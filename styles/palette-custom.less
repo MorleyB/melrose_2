@@ -1,9 +1,7 @@
-@large-asset-background: darken(@mid-background-color-palette, 5%);
-
-@link-color: spin(@custom-color, 180);
 
 @light-background-color-palette: lighten(@mid-background-color-palette, 5%);
 @mid-background-color-palette: lighten(@custom-color, 10%);
+@large-asset-background: darken(@mid-background-color-palette, 5%);
 
 body {
 	background-color: @custom-color !important;
@@ -18,3 +16,22 @@ body {
     font-style: normal !important;
   }
 }
+
+.icon-cloud-download {
+  color: @white !important;
+  text-shadow: 0px 4px 2px darken(@custom-color, 20%)
+}
+.download-icon-background {
+  background-color: lighten(@custom-color, 5%) !important;
+}
+
+a {
+  color: darken(@link-color, 15%) !important;
+  &:hover { color: lighten(@link-color, 2%) !important; }
+}
+a.link-btn { background-color: lighten(@custom-color, 10%) !important; }
+a.link-btn:hover { background-color: lighten(@custom-color, 13%) !important; }
+
+.document-title-text { &:hover { color: darken(@white, 60%) !important; } }
+
+

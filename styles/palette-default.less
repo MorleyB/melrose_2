@@ -1,29 +1,34 @@
-/************************************************************************
-// For extensive details about creating a Populr theme, please visit
-// http://developers.populr.me/theming
-*/
 
-// Populr will throw an error if a theme style file (like this one) is
-// empty. Therefore, even if you don't use multiple theme styles in your
-// theme, you must have some code in the default theme style file.
-@large-asset-background: desaturate(lighten(@background-color-palette, 7%), 22%);
+@large-asset-background: #502F62;
+@background-icon-color: #815291;
 
 @background-color-palette: @custom-color;
 
-@link-color: spin(@custom-color, 180);
-// #20B0DD;
+@light-background-color-palette: #815291;
+@mid-background-color-palette: #52295F;
 
-@light-background-color-palette: desaturate(lighten(@background-color-palette, 30%), 30%);
-@mid-background-color-palette: desaturate(lighten(@background-color-palette, 5%), 8%);
-
-body {
-	background-color: @background-color-palette !important;
-}
+body { background-color: @background-color-palette !important; }
 
 .download-icon-background {
- background-color: lighten(@custom-color, 10%);
+ background-color: lighten(@background-icon-color, 10%);
  i {
     color: @white;
     text-shadow: 0px 4px 2px darken(@custom-color, 20%);
   }
+}
+
+a.link-btn {
+	background-color: @custom-color !important;
+	margin-right: 10px !important;
+	margin-left: 0 !important;
+}
+a.link-btn:hover {  background-color: lighten(@custom-color, 10%) !important; }
+
+a {
+  color: @link-color;
+  &:hover { color: lighten(@link-color, 5%) !important; }
+}
+
+.document-title-text {
+  &:hover { color: darken(@white, 10%) !important; }
 }

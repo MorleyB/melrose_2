@@ -1,1 +1,30 @@
-@custom-color: #DAD6CA;
+@custom-color: #DAD6CA !important;
+
+@background-color-palette: @custom-color;
+
+@light-background-color-palette: darken(@custom-color, 3%);
+@mid-background-color-palette: darken(@custom-color, 6%);
+@large-asset-background: darken(@custom-color, 9%);
+
+body {
+	background-color: @background-color-palette !important;
+}
+
+.icon-cloud-download {
+	color: @white !important;
+  text-shadow: 0px 4px 2px darken(@custom-color, 20%)
+}
+.download-icon-background {
+  background-color: lighten(@custom-color, 5%) !important;
+}
+
+a {
+  color: darken(@link-color, 15%) !important;
+  &:hover { color: lighten(@link-color, 2%) !important; }
+}
+a.link-btn { background-color: lighten(@custom-color, 10%) !important; }
+a.link-btn:hover { background-color: lighten(@custom-color, 13%) !important; }
+
+.document-title-text { &:hover { color: darken(@white, 60%) !important; } }
+
+

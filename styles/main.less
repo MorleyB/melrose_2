@@ -12,14 +12,18 @@
 @import 'lato';
 
 // remove these before deploying ...........
-@import 'palette-default';
+// @import 'palette-default';
 // @import 'palette-custom';
+// @import 'palette-charcoal';
+// @import 'palette-smoke';
+// @import 'palette-white';
+// @import 'palette-black';
+
 
 
 // Call preboot.less's reset to reduce browser inconsistencies
 #reset > .global-reset();
 
-// #populr > .link-button(@custom-color);
 #populr > .inline-logo-title();
 
 
@@ -42,8 +46,6 @@
 .body, .description {
   #populr > .text-color-over-color(@light-background-color-palette);
 }
-
-// background color assignment base on position
 
 
 // Title text defaults
@@ -81,18 +83,6 @@
   color: @white;
   em { font-style: italic; }
   b, strong { font-weight: 700; }
-
-  a.link-btn {
-    background-color: @custom-color !important;
-    margin-right: 10px !important;
-    margin-left: 0 !important;
-  }
-  a.link-btn:hover {  background-color: darken(@custom-color, 2%) !important; }
-
-  a {
-    color: @link-color;
-    &:hover { color: lighten(@link-color, 20%); }
-  }
 }
 
 // End typography defaults
@@ -119,6 +109,9 @@ body .fullbg-container {
 }
 
 p { font-size: 16px; }
+
+.link-btn + .link-btn { margin-left: 0 !important; }
+a.link-btn { margin-right: 10px !important; }
 
 
 // Custom Theme Modifications Scrollbar Webkit Only
@@ -346,6 +339,7 @@ p { font-size: 16px; }
     width: 420px;
     .document-container {
       margin: 20px 0 20px 0;
+      float: right;
       .document-title-text {
         max-width: 300px;
         margin-right: 20px;
@@ -363,7 +357,7 @@ p { font-size: 16px; }
         .document-container {
           margin: 20px 0 20px 0;
           width: 185px;
-          float:left;
+          float: right;
           .document-title-text {
             width: 100px;
           }
@@ -404,8 +398,6 @@ p { font-size: 16px; }
         padding-top: 18px;
         float: left;
         .document-text();
-        color: @white;
-        &:hover { color: darken(@white, 16%); }
       }
     }
   }
