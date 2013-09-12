@@ -27,16 +27,14 @@
   fixColumnHeights = function() {
     $('body').removeClass('assets-resized'); // ie7
     if ($('html').css('content') == "\u2063") {
-      $('.asset').css('min-height', '');
+      $('#pop .asset').css('min-height', '');
 
     } else {
-      var $row;
       $('#pop').imagesLoaded(function() {
-        $('.columnizer-row').each(function(idx, el) {
-          $row = $(this);
-          // remove the min-height so that the row size can go down
-          $row.find('.asset').css('min-height', '');
-          setAssetHeights($row);
+        // remove the min-height so that the row size can go down
+        $('#pop .asset').css('min-height', '');
+        $('#pop .columnizer-row').each(function(idx, el) {
+          setAssetHeights($(this));
         });
       });
       $('body').addClass('assets-resized'); // ie7
