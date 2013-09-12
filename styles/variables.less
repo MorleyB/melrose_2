@@ -81,9 +81,11 @@
 // ie7 and ie8 grid adjustments
 .lt-ie8 {
   .columnizer-cols3 {
-    .columnizer-row-inner:nth-last-child(1) {
-      width: 240px;
-      margin-right: 0;
+    .columnizer-row-inner {
+      .asset-container + .asset-container + .asset-container {
+        width: 240px;
+        margin-right: 0;
+      }
     }
   }
 }
