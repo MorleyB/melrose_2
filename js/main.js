@@ -15,8 +15,9 @@
     if ($row.find('.asset.asset-type-text, .asset.asset-type-documentgroup, .asset.asset-type-embedgroup').length) {
       $row.find('.asset.asset-type-imagegroup').populr('display-height', height);
     } else {
-      var asset_count;
+      // when a row has only images, set the display height for all images in the row to the same value
       var default_image_heights = [350, 300, 250];
+      var asset_count;
       $image_assets = $row.find('.asset');
       asset_count = $image_assets.length;
       $image_assets.populr('display-height', default_image_heights[asset_count - 1]);
@@ -33,7 +34,8 @@
       $('#pop').imagesLoaded(function() {
         $('.columnizer-row').each(function(idx, el) {
           $row = $(this);
-          $(this).find('.asset').css('min-height', '');
+          // remove the min-height so that the row size can go down
+          $row.find('.asset').css('min-height', '');
           setAssetHeights($row);
         });
       });
