@@ -110,7 +110,7 @@ body .fullbg-container {
 
 p { font-size: 16px; }
 
-.link-btn + .link-btn { margin-left: 0 !important; }
+
 a.link-btn { margin-right: 10px !important; }
 
 
@@ -218,7 +218,6 @@ a.link-btn { margin-right: 10px !important; }
 
 // Text asset styling
 .asset-type-text.asset-size-1 {
-  background-color: @large-asset-background;
   .asset-title {
     font-size: 36px;
     text-align: center;
@@ -233,25 +232,45 @@ a.link-btn { margin-right: 10px !important; }
 /////////////////////////////////////////////////////////////////////////
 // Set Background Colors
 
-.columnizer-row-contents-embedgroup, .columnizer-row-contents-documentgroup {
-  .columnizer-col.columnizer-col1 {
-    background-color: @large-asset-background;
+
+.columnizer-col.columnizer-col1 {
+  background-color: @large-asset-background;
+  #populr > .link-button(@large-alt-custom-color);
+  #populr > .icon(@large-alt-custom-color);
+  .link-btn + .link-btn { margin-left: 0 !important; margin-right: 20px !important; }
+}
+
+
+
+.columnizer-col.columnizer-col2 {
+  &:first-child {
+    background-color: @light-background-color-palette;
+    #populr > .link-button(@light-alt-custom-color);
+    #populr > .icon(@light-alt-custom-color);
+    .link-btn + .link-btn, .link-btn:first-child { margin-left: 0 !important; margin-right: 20px !important; }
+  }
+  &:last-child {
+    background-color: @mid-background-color-palette;
+    #populr > .link-button(@mid-alt-custom-color);
+    #populr > .icon(@mid-alt-custom-color);
+    .link-btn + .link-btn { margin-left: 0 !important; margin-right: 20px !important; }
   }
 }
 
 
-.columnizer-col.columnizer-col2 {
-  &:first-child { background-color: @light-background-color-palette; }
-  &:last-child { background-color: @mid-background-color-palette; }
-}
-
-
 .columnizer-col.columnizer-col3 {
-  &:first-child { background-color: @light-background-color-palette; }
-  &:last-child { background-color: @light-background-color-palette; }
+  .link-btn + .link-btn { margin-left: 0 !important; }
+  &:first-child, &:last-child {
+    background-color: @light-background-color-palette;
+    #populr > .link-button(@light-alt-custom-color);
+    #populr > .icon(@light-alt-custom-color);
+    .link-btn + .link-btn { margin-left: 0 !important; margin-right: 20px !important; }
+  }
   background-color: @mid-background-color-palette;
+  #populr > .link-button(@mid-alt-custom-color);
+  #populr > .icon(@mid-alt-custom-color);
+  .link-btn + .link-btn { margin-left: 0 !important; margin-right: 20px !important; }
 }
-
 
 
 

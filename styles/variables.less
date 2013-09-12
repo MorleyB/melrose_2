@@ -33,7 +33,6 @@
 // http://developers.populr.me/theming/
 @custom-color: #361241;
 @link-color: #20B0DD;
-// 361241
 
 /************************************************************************
 // @populr-theme version
@@ -87,5 +86,40 @@
 .columnizer-row { *zoom: 1; }
 
 // If you've set @populr-theme-version to 1, we recommend using these mixins.
-#populr > .link-button(@custom-color);
-#populr > .icon(@custom-color);
+// #populr > .link-button(@custom-color);
+// #populr > .icon(@custom-color);
+
+
+
+@light-alt-custom-color: #fff;
+// set light-alt-custom-color, which is used when a link-button or icon needs to be
+// displayed over an element that uses the custom color as the background color
+// which would make the non-light-alt button / icon hard to see because it uses the
+// custom color
+
+.light-alt-background-color(@color-param) when(luma(@color-param) > 75%) {
+  @light-alt-custom-color: darken(desaturate(@custom-color, 20%), 15%);
+}
+.light-alt-background-color(@color-param) when(luma(@color-param) =< 75%) {
+  @light-alt-custom-color: lighten(saturate(@custom-color, 20%), 15%);
+}
+
+
+@mid-alt-custom-color: #fff;
+.mid-alt-background-color(@color-param) when(luma(@color-param) > 75%) {
+  @mid-alt-custom-color: darken(desaturate(@custom-color, 20%), 15%);
+}
+.mid-alt-background-color(@color-param) when(luma(@color-param) =< 75%) {
+  @mid-alt-custom-color: lighten(saturate(@custom-color, 20%), 15%);
+}
+
+
+@large-alt-custom-color: #fff;
+.large-alt-background-color(@color-param) when(luma(@color-param) > 75%) {
+  @large-alt-custom-color: darken(desaturate(@custom-color, 20%), 15%);
+}
+.large-alt-background-color(@color-param) when(luma(@color-param) =< 75%) {
+  @large-alt-custom-color: lighten(saturate(@custom-color, 20%), 15%);
+}
+// end:set large-alt-custom-color...
+
