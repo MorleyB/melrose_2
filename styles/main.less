@@ -465,10 +465,7 @@ a.link-btn { margin-right: 10px !important; }
     width: 30px;
     padding: 15px;
     float: right;
-    border-radius: 50%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    behavior: url(/js/PIE.htc);
+    .circle();
     i {
       margin-left: -2px;
       font-style: normal !important;
@@ -476,6 +473,12 @@ a.link-btn { margin-right: 10px !important; }
   }
 }
 
+.circle() {
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  behavior: url(../js/PIE.htc);
+}
 
 
 // Clearfix
