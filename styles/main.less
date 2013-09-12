@@ -419,6 +419,13 @@ a.link-btn { margin-right: 10px !important; }
           float: right;
           .document-title-text {
             width: 100px;
+            &.lt-ie8 {
+              width: 60%;
+              margin-bottom: 20px;
+            }
+          }
+          .download-icon-background {
+            &.lt-ie8 { margin-top: 22px !important; }
           }
         }
       }
@@ -474,13 +481,7 @@ a.link-btn { margin-right: 10px !important; }
     }
   }
 }
-.lt-ie8 .document-title-text {
-  width: 60%;
-  margin-bottom: 20px;
-}
-.lt-ie8 .document-icon-background {
-  margin-top: 20px;
-}
+
 
 // Clearfix
 .clearfix:after {
