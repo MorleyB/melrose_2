@@ -255,12 +255,24 @@ a.link-btn { margin-right: 10px !important; }
     #populr > .icon(@mid-alt-custom-color);
     .link-btn + .link-btn { margin-left: 0 !important; margin-right: 20px !important; }
   }
+  .lt-ie8:nth-last-child(1) {
+    background-color: @mid-background-color-palette;
+    #populr > .link-button(@mid-alt-custom-color);
+    #populr > .icon(@mid-alt-custom-color);
+    .link-btn + .link-btn { margin-left: 0 !important; margin-right: 20px !important; }
+  }
 }
 
 
 .columnizer-col.columnizer-col3 {
   .link-btn + .link-btn { margin-left: 0 !important; }
   &:first-child, &:last-child {
+    background-color: @light-background-color-palette;
+    #populr > .link-button(@light-alt-custom-color);
+    #populr > .icon(@light-alt-custom-color);
+    .link-btn + .link-btn { margin-left: 0 !important; margin-right: 20px !important; }
+  }
+  .lt-ie8:nth-last-child(1){
     background-color: @light-background-color-palette;
     #populr > .link-button(@light-alt-custom-color);
     #populr > .icon(@light-alt-custom-color);
