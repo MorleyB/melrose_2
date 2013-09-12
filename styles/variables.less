@@ -72,12 +72,12 @@
     width: 480px;
     &:first-child { width: 240px; }
     &:last-child { width: 240px; }
-    .lt-ie8:nth-last-child(1) { width: 240px; }
+    .lt-ie8 { &:nth-last-child(1) { width: 240px; } }
   }
 
 	&:first-child { margin-left: 0; }
 	&:last-child { margin-right: 0; }
-  .lt-ie8:nth-last-child(1) { margin-right: 0; }
+  .lt-ie8 { :nth-last-child(1) { margin-right: 0; } }
 }
 
 .asset {
