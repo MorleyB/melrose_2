@@ -16,7 +16,7 @@
       $row.find('.asset.asset-type-imagegroup').populr('display-height', height);
     } else {
       // when a row has only images, set the display height for all images in the row to the same value
-      var default_image_heights = [350, 300, 250];
+      var default_image_heights = [360, 353, 230];
       var asset_count;
       $image_assets = $row.find('.asset');
       asset_count = $image_assets.length;
