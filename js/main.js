@@ -4,7 +4,7 @@
   maxColHeight = function($row) {
     var maxHeight = 0;
     $row.find('.asset.asset-type-text, .asset.asset-type-documentgroup, .asset.asset-type-embedgroup').each(function() {
-      maxHeight = Math.max(maxHeight, $(this).height());
+      maxHeight = Math.max(maxHeight, $(this).outerHeight());
     });
     return maxHeight;
   };
