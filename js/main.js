@@ -34,7 +34,7 @@
         // remove the min-height so that the row size can go down
         $('#pop .asset').css('min-height', '');
         $('#pop .columnizer-row').each(function(idx, el) {
-           $(this).find('.asset').css('min-height', setAssetHeights($(this)));
+          setAssetHeights($(this));
         });
       });
       $('body').addClass('assets-resized'); // ie7
