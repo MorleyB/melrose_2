@@ -279,7 +279,11 @@ a.link-btn { margin-right: 10px !important; }
 #logo-region {
   .populr-image-slider {
     opacity: .2;
-    &:hover { opacity: .2; }
+    &:hover {
+      opacity: .2;
+      filter:alpha(opacity=20); /* IE */
+      -moz-opacity:0.2; /* Mozilla */
+    }
   }
 }
 #populr > #image-slider-themes > .basic();
@@ -330,6 +334,8 @@ a.link-btn { margin-right: 10px !important; }
   &:hover {
     .populr-image-slider {
       opacity: .25;
+      filter:alpha(opacity=25); /* IE */
+      -moz-opacity:0.25; /* Mozilla */
     }
     .imagegroup-container {
       display: block;
