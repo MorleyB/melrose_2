@@ -329,43 +329,12 @@ a.link-btn { margin-right: 10px !important; }
 .lt-ie9 {
   .asset-inner.populr-image-slider:hover { filter:alpha(opacity=25); }
   .columnizer-row-inner {
-    .asset-container:first-child .middle-image { display: none }
-    .asset-container:first-child + .asset-container + .asset-container .middle-image { display: none }
-    .asset-container:first-child + .asset-container .small-image { display: none }
+    .asset-container:first-child .middle-image { display: none; }
+    .asset-container:first-child + .asset-container + .asset-container .middle-image { display: none; }
+    .asset-container:first-child + .asset-container .small-image { display: none; }
+    .asset-container:first-child + .asset-container .middle-image { display: block; }
   }
 }
-
-// .columnizer-row-inner {
-//   .asset-container:nth-child(odd) {
-//     .asset.asset-type-imagegroup.asset-size-3 {
-//       .asset-inner {
-//         .middle-image {
-//           display: none;
-//         }
-//       }
-//     }
-//   }
-//   .asset-container {
-//     .asset.asset-type-imagegroup.asset-size-3 {
-//       .asset-inner {
-//         .small-image {
-//           display: none;
-//         }
-//       }
-//     }
-//   }
-//   .lt-ie9 {
-//     .asset-container:first-child, .asset-container:first-child + .asset-container + .asset-container {
-//       .asset.asset-type-imagegroup.asset-size-3 {
-//         .asset-inner {
-//           .middle-image {
-//             display: none;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
 
 
 // Image Hover style
