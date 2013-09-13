@@ -325,8 +325,8 @@ a.link-btn { margin-right: 10px !important; }
   .asset-inner.populr-image-slider:hover { filter:alpha(opacity=25); }
   .columnizer-row-inner {
     .asset-container:first-child .middle-image { display: none; }
-    .asset-container:first-child + .asset-container + .asset-container .middle-image { display: none; }
-    .asset-container + .asset-container {
+    .asset-container:nth-last-child(odd) { display: none; }
+    .asset-container:nth-last-child(even) {
       .small-image { display: none; }
       .middle-image { display: block; }
     }
