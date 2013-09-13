@@ -324,15 +324,59 @@ a.link-btn { margin-right: 10px !important; }
 .ie7 .columnizer-row-inner .asset-container.nth-last-child(2) .asset.asset-type-imagegroup.asset-size-3 .asset-inner .middle-image { display: block; }
 .ie7 .columnizer-row-inner .asset-container:first-child .asset.asset-type-imagegroup.asset-size-3 .asset-inner .small-image { display: block; }
 .ie7 .columnizer-row-inner .asset-container:first-child .asset.asset-type-imagegroup.asset-size-3 .asset-inner .middle-image { display: none; }
-// .ie7 .columnizer-row-inner .asset-inner:nth-last-child(2)
+.ie7 .columnizer-row-inner .asset-container:first-child + .asset-container.columnizer-col.columnizer-col3 {
+  .asset.asset-type-imagegroup.asset-size-3 .asset-inner .small-image { display: none; }
+  .asset.asset-type-imagegroup.asset-size-3 .asset-inner .middle-image { display: block; }
+  .asset.asset-type-imagegroup.asset-size-3 .asset-inner .imagegroup-container { width: 420px; }
+}
+.ie7 .columnizer-row-inner .asset-container:first-child + .asset-container.columnizer-col.columnizer-col3 + .asset-container.columnizer-col.columnizer-col3 {
+  .asset.asset-type-imagegroup.asset-size-3 .asset-inner .imagegroup-container { width: 180px; }
+}
+.ie7 .columnizer-row-inner .asset-container:first-child {
+  .asset.asset-type-imagegroup.asset-size-3 .asset-inner .imagegroup-container { width: 180px; }
+}
 
-// .ie7 .columnizer-row-inner .asset-container:first-child + .asset-container .asset.asset-type-imagegroup.asset-size-3 .asset-inner .small-image { display: block; }
-// .ie7 .columnizer-row-inner .asset-container:first-child + .asset-container .asset.asset-type-imagegroup.asset-size-3 .asset-inner .middle-image { display: none; }
 
 .lt-ie9 .asset-inner.populr-image-slider:hover { filter:alpha(opacity=25); }
 .lt-ie9 .columnizer-row-inner .asset-container:first-child + .asset-container .small-image { display: none; }
 .lt-ie9 .columnizer-row-inner .asset-container:first-child + .asset-container + .asset-container .middle-image { display: none; }
 
+
+// Image Hover style
+// IE 7 adjustments
+.ie7 .asset.asset-type-imagegroup.asset-size-1 .asset-inner {
+  .imagegroup-container { display: none; }
+  &:hover, .aloha-active & {
+    .imagegroup-container {
+      display: block;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+  }
+}
+.ie7 .asset.asset-type-imagegroup.asset-size-2 .asset-inner {
+  .imagegroup-container { display: none; }
+  &:hover, .aloha-active & {
+    .imagegroup-container {
+      display: block;
+      overflow-x: hidden;
+      overflow-y: auto;
+      width: 420px !important;
+    }
+  }
+}
+.ie7 .asset.asset-type-imagegroup.asset-size-3 .asset-inner {
+  .imagegroup-container { display: none; }
+  &:hover, .aloha-active & {
+    .imagegroup-container {
+      display: block;
+      overflow-x: hidden;
+      overflow-y: auto;
+      margin-top: -160px !important;
+      height: 100px !important;
+    }
+  }
+}
 
 // Image Hover style
 .asset.asset-type-imagegroup.asset-size-1 {
@@ -611,12 +655,24 @@ a.link-btn { margin-right: 10px !important; }
   .columnizer-row-inner, #banner, #banner-color { max-width: 640px; }
   .columnizer-col { margin: 0 !important; }
 
-  // size 1 image asset fix for mobile
-  .asset.asset-type-imagegroup.asset-size-1 .imagegroup-container {
-    margin-top: -180px;
-    height: 100px;
+  // image asset fix for mobile
+  .asset.asset-type-imagegroup.asset-size-1 .imagegroup-container { margin-top: -180px; }
+  .asset.asset-type-imagegroup.asset-size-2 {
+    .populr-image-slider {
+      height: 353px;
+    }
+    .imagegroup-container {
+      margin-top: -180px;
+    }
   }
-
+  .asset.asset-type-imagegroup.asset-size-3 {
+    .populr-image-slider {
+      height: 230px;
+    }
+    .imagegroup-container {
+      margin-top: -180px;
+    }
+  }
   // Edit the typography for mobile
   #pop-title { font-size: 40px !important; }
   .asset-title { font-size: 24px !important; }
