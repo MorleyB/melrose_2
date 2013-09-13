@@ -329,26 +329,48 @@ a.link-btn { margin-right: 10px !important; }
   display: none;
 }
 
-.columnizer-row-inner {
-  .asset-container:first-child, .asset-container:last-child, .asset-container:first-child + .asset-container + .asset-container {
-    .asset.asset-type-imagegroup.asset-size-3 {
-      .asset-inner {
-        .middle-image {
-          display: none;
-        }
-      }
-    }
-  }
-  .asset-container:first-child + .asset-container {
-    .asset.asset-type-imagegroup.asset-size-3 {
-      .asset-inner {
-        .small-image {
-          display: none;
-        }
-      }
-    }
-  }
+.columnizer-row-inner .asset-container:first-child .asset.asset-type-imagegroup.asset-size-3 .asset-inner .middle-image { display: none }
+.columnizer-row-inner .asset-container:last-child .asset.asset-type-imagegroup.asset-size-3 .asset-inner .middle-image { display: none }
+.columnizer-row-inner .asset-container:nth-child(even) .asset.asset-type-imagegroup.asset-size-3 .asset-inner .small-image { display: none }
+
+.lt-ie9 {
+  .columnizer-row-inner .asset-container.odd .asset.asset-type-imagegroup.asset-size-3 .asset-inner .middle-image { display: none }
+.co
+    .columnizer-row-inner .asset-container.even .asset.asset-type-imagegroup.asset-size-3 .asset-inner .middle-image { display: none }
+.co
 }
+
+// .columnizer-row-inner {
+//   .asset-container:nth-child(odd) {
+//     .asset.asset-type-imagegroup.asset-size-3 {
+//       .asset-inner {
+//         .middle-image {
+//           display: none;
+//         }
+//       }
+//     }
+//   }
+//   .asset-container {
+//     .asset.asset-type-imagegroup.asset-size-3 {
+//       .asset-inner {
+//         .small-image {
+//           display: none;
+//         }
+//       }
+//     }
+//   }
+//   .lt-ie9 {
+//     .asset-container:first-child, .asset-container:first-child + .asset-container + .asset-container {
+//       .asset.asset-type-imagegroup.asset-size-3 {
+//         .asset-inner {
+//           .middle-image {
+//             display: none;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 
 
 // Image Hover style
