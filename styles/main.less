@@ -321,11 +321,10 @@ a.link-btn { margin-right: 10px !important; }
 .columnizer-row-inner .asset-container:nth-child(even) .asset.asset-type-imagegroup.asset-size-3 .asset-inner .small-image { display: none }
 
 // IE 7 & IE 8 fixes to show hide unused image slider
-.lt-ie9 {
-  .asset-inner.populr-image-slider:hover { filter:alpha(opacity=25); }
-  .columnizer-row-inner .asset-container:nth-last-child(odd) .middle-image { display: none; }
-  .columnizer-row-inner .asset-container:nth-last-child(even) .small-image { display: none; }
-}
+.lt-ie9 .asset-inner.populr-image-slider:hover { filter:alpha(opacity=25); }
+.lt-ie9 .columnizer-row-inner .asset-container:first-child + .asset-container .small-image { display: none }
+.lt-ie9 .columnizer-row-inner .asset-container:first-child + .asset-container + .asset-container .middle-image { display: none }
+
 
 // Image Hover style
 .asset.asset-type-imagegroup.asset-size-1 {
