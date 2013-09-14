@@ -4,6 +4,40 @@
 @light-background-color-palette: lighten(@background-color-palette, 10%);
 @mid-background-color-palette: lighten(@background-color-palette, 5%);
 @large-asset-background: lighten(@background-color-palette, 7%);
+@background-icon-color: @custom-color;
+
+@light-alt-custom-color: #fff;
+.light-alt-background-color(@color-param) when(luma(@color-param) > 75%) {
+  @light-alt-custom-color: darken(desaturate(@custom-color, 5%), 5%);
+}
+.light-alt-background-color(@color-param) when(luma(@color-param) =< 75%) {
+  @light-alt-custom-color: lighten(saturate(@custom-color, 5%), 5%);
+}
+
+
+@mid-alt-custom-color: #fff;
+.mid-alt-background-color(@color-param) when(luma(@color-param) > 75%) {
+  @mid-alt-custom-color: darken(desaturate(@custom-color, 5%), 16%);
+}
+.mid-alt-background-color(@color-param) when(luma(@color-param) =< 75%) {
+  @mid-alt-custom-color: lighten(saturate(@custom-color, 5%), 16%);
+}
+
+
+@large-alt-custom-color: #fff;
+.large-alt-background-color(@color-param) when(luma(@color-param) > 75%) {
+  @large-alt-custom-color: darken(desaturate(@custom-color, 15%), 15%);
+}
+.large-alt-background-color(@color-param) when(luma(@color-param) =< 75%) {
+  @large-alt-custom-color: lighten(saturate(@custom-color, 15%), 15%);
+}
+
+
+.light-alt-background-color(@light-background-color-palette);
+.mid-alt-background-color(@mid-background-color-palette);
+.large-alt-background-color(@large-asset-background);
+
+
 
 body {
 	background-color: @background-color-palette !important;

@@ -1,3 +1,4 @@
+
 (function() {
   var fixColumnHeights, maxColHeight;
 
@@ -6,7 +7,7 @@
     $row.find('.asset.asset-type-text, .asset.asset-type-documentgroup, .asset.asset-type-embedgroup').each(function() {
       maxHeight = Math.max(maxHeight, $(this).height());
     });
-    return maxHeight;
+    return Math.max(maxHeight, 150);
   };
 
   setAssetHeights = function($row) {
