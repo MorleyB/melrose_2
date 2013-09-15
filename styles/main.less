@@ -325,10 +325,12 @@ a.link-btn { margin-right: 10px !important; }
   }
 }
 
-.lt-ie9 .columnizer-row-inner .asset-container +  .asset-container + .asset-container {
-  .asset-inner {
-    .small-image { display: block; }
-    .middle-image { display: none; }
+.lt-ie9 .columnizer-row-inner {
+  .asset-container + .asset-container + .asset-container {
+    .asset.asset-type-imagegroup.asset-size-3 {
+      .small-image { display: block; }
+      .middle-image { display: none; }
+    }
   }
 }
 
