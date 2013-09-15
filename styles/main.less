@@ -544,16 +544,13 @@ a.link-btn { margin-right: 10px !important; }
 }
 
 .ie8 .asset-type-imagegroup.asset-inner:hover {
-  &:hover, .aloha-active & {
-    .populr-image-slider {
-      .opacity(25);
-    }
-    .imagegroup-container {
-      display: block;
-    }
+  &:hover {
+    .populr-image-slider img { filter:alpha(opacity=25); }
+    // .imagegroup-container {
+    //   display: block;
+    // }
   }
 }
-
 
 
 /////////////////////////////////////////////////////////////////////////
