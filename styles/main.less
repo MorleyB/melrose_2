@@ -160,7 +160,7 @@ a.link-btn { margin-right: 10px !important; }
 // Banner Region
 #banner {
   position: relative;
-  width: 960px;
+  max-width: 960px;
   height: 250px;
   margin: 40px auto 0;
   overflow: hidden;
@@ -557,11 +557,11 @@ a.link-btn { margin-right: 10px !important; }
   .description, .body, .description li, .body li { font-size: 14px !important; }
   .asset-title, .description, .body, .description li, .body li { text-align: left !important; }
 }
-
+ƒ
 @media screen and (max-width: 600px) {
   .columnizer-row-inner, #banner, #banner-color { max-width: 500px; }
-  .columnizer-col { margin: 0 !important; }
-  #pop-logo img { width: 50px; }
+  .columnizer-col { margin:5 0 !important; }
+  #pop-logo img { width: 75%; }
 }
 
 @media screen and (max-width: 520px) {
@@ -569,4 +569,6 @@ a.link-btn { margin-right: 10px !important; }
     font-size: 20px !important;
     text-align: left !important;
   }
+  #pop-logo { margin-top: -10px; }
+  #pop-logo img { width: 150px; }
 }
