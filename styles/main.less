@@ -59,13 +59,11 @@
   font-size: 20px;
   line-height: 24px;
   text-shadow: 0px 4px 2px @custom-color;
-  color: @white !important;
 }
 .description-text-size-1() {
   font-family: @body-font-family;
   font-size: 16px;
   line-height: 26px;
-  color: @white !important;
 }
 
 
@@ -74,7 +72,6 @@
   font-size: 18px;
   line-height: 24px;
   text-shadow: 0px 4px 2px @custom-color;
-  color: @white !important;
 }
 
 // Body text defaults
@@ -82,7 +79,6 @@
   font-family: @headline-font-family;
   font-size: 16px;
   line-height: 26px;
-  color: @white !important;
 }
 
 .title-text() {
@@ -90,14 +86,12 @@
   font-size: 20px;
   line-height: 26px;
   text-shadow: 0px 4px 2px @custom-color;
-  color: @white !important;
 }
 
 .body-text() {
   font-family: @body-font-family;
   font-size: 16px;
   line-height: 26px;
-  color: @white !important;
 }
 
 #pop {
@@ -272,30 +266,9 @@ a.link-btn { margin-right: 10px !important; }
       background-color: @mid-background-color-palette;
       #populr > .link-button(@mid-alt-custom-color);
       #populr > .icon(@mid-alt-custom-color);
-      .small-image { display: none; }
-      .middle-image { display: block; }
     }
   }
 }
-
-.columnizer-row-inner {
-  .asset-container + .asset-container {
-    .asset.asset-type-imagegroup.asset-size-3 {
-      .small-image { display: none; }
-      .middle-image { display: block; }
-    }
-  }
-}
-
- .columnizer-row-inner {
-  .asset-container + .asset-container + .asset-container {
-    .asset.asset-type-imagegroup.asset-size-3 {
-      .small-image { display: block; }
-      .middle-image { display: none; }
-    }
-  }
-}
-
 
 
 
@@ -308,6 +281,23 @@ a.link-btn { margin-right: 10px !important; }
 .columnizer-row-inner .asset-container:last-child .asset.asset-type-imagegroup.asset-size-3 .asset-inner .middle-image { display: none; }
 .columnizer-row-inner .asset-container:nth-child(even) .asset.asset-type-imagegroup.asset-size-3 .asset-inner .small-image { display: none; }
 
+.lt-ie9 .columnizer-row-inner {
+  .asset-container + .asset-container {
+    .asset.asset-type-imagegroup.asset-size-3 {
+      .small-image { display: none; }
+      .middle-image { display: block; }
+    }
+  }
+}
+
+.lt-ie9 .columnizer-row-inner {
+  .asset-container + .asset-container + .asset-container {
+    .asset.asset-type-imagegroup.asset-size-3 {
+      .small-image { display: block; }
+      .middle-image { display: none; }
+    }
+  }
+}
 
 
 // Image Hover style
