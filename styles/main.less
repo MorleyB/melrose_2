@@ -12,7 +12,7 @@
 @import 'lato';
 
 // remove these before deploying ...........
-@import 'palette-default';
+// @import 'palette-default';
 // @import 'palette-custom';
 // @import 'palette-charcoal';
 // @import 'palette-smoke';
@@ -201,7 +201,7 @@ a.link-btn { margin-right: 10px !important; }
 
 #pop-title {
   width: 620px;
-  position: absolute;
+  // position: absolute;
   right: 0;
   .body-text();
   height: 110px;
@@ -522,6 +522,9 @@ a.link-btn { margin-right: 10px !important; }
   .columnizer-row-inner, #banner, #banner-color { max-width: 640px; }
   .columnizer-col { margin: 0 !important; }
 
+  #pop-title { top: 50px; }
+
+
   // image asset fix for mobile
   .asset.asset-type-imagegroup.asset-size-1 .imagegroup-container { margin-top: -180px; }
   .asset.asset-type-imagegroup.asset-size-2 {
@@ -550,16 +553,20 @@ a.link-btn { margin-right: 10px !important; }
   .columnizer-row-inner .asset-container:nth-child(even) .asset.asset-type-documentgroup.asset-size-3 .documents .document-container {
     margin-right: 30px;
   }
-  // Edit the typography for mobile
-  // .has-logo.has-title h1#pop-title {
-  //   display: relative;
-  // }
-  // .asset-title { font-size: 24px !important; }
+
   .description, .body, .description li, .body li { font-size: 14px !important; }
   .asset-title, .description, .body, .description li, .body li { text-align: left !important; }
 }
 
 @media screen and (max-width: 600px) {
-  // #pop-title { font-size: 32px !important; }
-  // .asset-title { font-size: 20px !important; }
+  .columnizer-row-inner, #banner, #banner-color { max-width: 500px; }
+  .columnizer-col { margin: 0 !important; }
+  #pop-logo img { width: 50px; }
+}
+
+@media screen and (max-width: 520px) {
+  h1#pop-title {
+    font-size: 20px !important;
+    text-align: left !important;
+  }
 }
