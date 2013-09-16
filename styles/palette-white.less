@@ -1,35 +1,35 @@
-@custom-color: #ffffff !important;
-@background-color-palette: @custom-color;
+@white-color: #ffffff !important;
+@background-color-palette: @white-color;
 
-@large-asset-background: darken(@custom-color, 4%);
-@light-background-color-palette: darken(@custom-color, 3%);
-@mid-background-color-palette: darken(@custom-color, 3%);
-@background-icon-color: @custom-color;
+@large-asset-background: darken(@white-color, 4%);
+@light-background-color-palette: darken(@white-color, 3%);
+@mid-background-color-palette: darken(@white-color, 3%);
+@background-icon-color: @white-color;
 
 @light-alt-custom-color: #fff;
 .light-alt-background-color(@color-param) when(luma(@color-param) > 75%) {
-  @light-alt-custom-color: darken(desaturate(@custom-color, 15%), 20%);
+  @light-alt-custom-color: darken(desaturate(@white-color, 15%), 20%);
 }
 .light-alt-background-color(@color-param) when(luma(@color-param) =< 75%) {
-  @light-alt-custom-color: lighten(saturate(@custom-color, 15%), 10%);
+  @light-alt-custom-color: lighten(saturate(@white-color, 15%), 10%);
 }
 
 
 @mid-alt-custom-color: #fff;
 .mid-alt-background-color(@color-param) when(luma(@color-param) > 75%) {
-  @mid-alt-custom-color: darken(desaturate(@custom-color, 15%), 16%);
+  @mid-alt-custom-color: darken(desaturate(@white-color, 15%), 16%);
 }
 .mid-alt-background-color(@color-param) when(luma(@color-param) =< 75%) {
-  @mid-alt-custom-color: lighten(saturate(@custom-color, 15%), 16%);
+  @mid-alt-custom-color: lighten(saturate(@white-color, 15%), 16%);
 }
 
 
 @large-alt-custom-color: #fff;
 .large-alt-background-color(@color-param) when(luma(@color-param) > 75%) {
-  @large-alt-custom-color: darken(desaturate(@custom-color, 15%), 15%);
+  @large-alt-custom-color: darken(desaturate(@white-color, 15%), 15%);
 }
 .large-alt-background-color(@color-param) when(luma(@color-param) =< 75%) {
-  @large-alt-custom-color: lighten(saturate(@custom-color, 15%), 15%);
+  @large-alt-custom-color: lighten(saturate(@white-color, 15%), 15%);
 }
 
 
@@ -44,13 +44,13 @@ a {
 }
 
 .download-icon-background {
-  background-color: darken(@custom-color, 10%);
-  // &:hover { color: darken(@custom-color, 10%); }
+  background-color: darken(@white-color, 10%);
+  // &:hover { color: darken(@white-color, 10%); }
 }
 .icon-cloud-download {
   color: @white !important;
-  text-shadow: 0px 4px 2px darken(@custom-color, 20%);
-  &:hover { color: darken(@custom-color, 7%); }
+  text-shadow: 0px 4px 2px darken(@white-color, 20%);
+  &:hover { color: darken(@white-color, 7%); }
 }
 
 .document-title-text {
