@@ -229,7 +229,7 @@ a.link-btn { margin-right: 10px !important; }
 
 // Text asset styling
 .asset-type-text{
-  .asset-inner { padding: 30px }
+  .asset-inner { padding: 30px; }
 }
 
 
@@ -339,7 +339,7 @@ a.link-btn { margin-right: 10px !important; }
 
 // Document asset styling
 .asset-type-documentgroup {
-  .asset-inner { padding: 30px }
+  .asset-inner { padding: 30px; }
 }
 .asset.asset-type-documentgroup.asset-size-1 {
   .document-container {
@@ -436,7 +436,7 @@ a.link-btn { margin-right: 10px !important; }
 
 // Embeds and videos
 .asset-type-embedgroup {
-  .asset-inner { padding: 30px }
+  .asset-inner { padding: 30px; }
 }
 
 // Clearfix
@@ -455,9 +455,6 @@ a.link-btn { margin-right: 10px !important; }
 /////////////////////////////////////////////////////////////////////////
 // IE Adjustments
 
-
-// End structure
-/////////////////////////////////////////////////////////////////////////
 .lt-ie9 {
   .columnizer-cols2 {
     .columnizer-row-inner {
@@ -503,8 +500,15 @@ a.link-btn { margin-right: 10px !important; }
   }
 }
 
+.lte-ie10 .zoom-glass {
+  display: none;
+}
 
-
+.lte-ie10 i.icon {
+  display: none;
+}
+// End structure
+/////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////////
 // Mobile
@@ -557,7 +561,6 @@ a.link-btn { margin-right: 10px !important; }
   .description, .body, .description li, .body li { font-size: 14px !important; }
   .asset-title, .description, .body, .description li, .body li { text-align: left !important; }
 }
-ƒ
 @media screen and (max-width: 600px) {
   .columnizer-row-inner, #banner, #banner-color { max-width: 500px; }
   .columnizer-col { margin:5 0 !important; }
@@ -570,5 +573,4 @@ a.link-btn { margin-right: 10px !important; }
     text-align: left !important;
   }
   #pop-logo { margin: -10px 0 0 0; }
-  // #pop-logo img { width: 85%; }
 }
