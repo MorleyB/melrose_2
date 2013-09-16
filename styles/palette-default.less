@@ -1,3 +1,5 @@
+@custom-color: #361241 !important;
+
 @light-alt-custom-color: #fff;
 .light-alt-background-color(@color-param) when(luma(@color-param) > 75%) {
   @light-alt-custom-color: darken(desaturate(@custom-color, 15%), 10%);
