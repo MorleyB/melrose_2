@@ -1,61 +1,13 @@
-
+@background-color-palette: @custom-color;
 @light-background-color-palette: lighten(@mid-background-color-palette, 3%);
 @mid-background-color-palette: lighten(@custom-color, 10%);
 @large-asset-background: darken(@mid-background-color-palette, 3%);
 @background-icon-color: @custom-color;
 
-@light-alt-custom-color: #fff;
-.light-alt-background-color(@color-param) when(luma(@color-param) > 75%) {
-  @light-alt-custom-color: darken(desaturate(@custom-color, 15%), 10%);
-}
-.light-alt-background-color(@color-param) when(luma(@color-param) =< 75%) {
-  @light-alt-custom-color: lighten(saturate(@custom-color, 15%), 10%);
-}
-
-@mid-alt-custom-color: #fff;
-.mid-alt-background-color(@color-param) when(luma(@color-param) > 75%) {
-  @mid-alt-custom-color: darken(desaturate(@custom-color, 15%), 16%);
-}
-.mid-alt-background-color(@color-param) when(luma(@color-param) =< 75%) {
-  @mid-alt-custom-color: lighten(saturate(@custom-color, 15%), 16%);
-}
-
-
-@large-alt-custom-color: #fff;
-.large-alt-background-color(@color-param) when(luma(@color-param) > 75%) {
-  @large-alt-custom-color: darken(desaturate(@custom-color, 15%), 15%);
-}
-.large-alt-background-color(@color-param) when(luma(@color-param) =< 75%) {
-  @large-alt-custom-color: lighten(saturate(@custom-color, 15%), 15%);
-}
-
-
-.light-alt-background-color(@light-background-color-palette);
-.mid-alt-background-color(@mid-background-color-palette);
-.large-alt-background-color(@large-asset-background);
-
-
 body {
 	background-color: @custom-color !important;
 }
 
-.download-icon-background {
- background-color: @custom-color;
- i {
-    margin-left: -2px;
-    color: @white;
-    text-shadow: 0px 4px 2px darken(@custom-color, 20%);
-    font-style: normal !important;
-  }
-}
-
-.icon-cloud-download {
-  color: @white !important;
-  text-shadow: 0px 4px 2px darken(@custom-color, 20%)
-}
-.download-icon-background {
-  background-color: lighten(@custom-color, 10%) !important;
-}
 
 a {
   color:@link-color !important;
@@ -63,6 +15,6 @@ a {
 }
 
 
-.document-title-text { &:hover { color: darken(@white, 60%) !important; } }
+
 
 

@@ -29,6 +29,9 @@
 @body-font-family: 'latolight', sans-serif;
 
 
+.font-color(@custom-color) when (luma(@custom-color) >= 50%) { color: lighten(#333, 20%) !important; }
+.font-color(@custom-color) when (luma(@custom-color) < 50%) { color: darken(#fff, 20%) !important; }
+
 
 // text color variables based on background color
 .asset-title, .document-title-text {
@@ -43,14 +46,19 @@
 
 
 
-
 // Title text defaults
 // @headline-font-family is defined in variables.less
+.text-shadow() {
+  text-shadow: 0px 2px 1px darken(@custom-color, 20%);
+}
+.text-shadow-dark() {
+  text-shadow: 0px 2px 1px darken(@custom-color, 40%);
+}
 .headline-text-size-1() {
   font-family: @headline-font-family;
   font-size: 20px;
   line-height: 24px;
-  text-shadow: 0px 4px 2px @custom-color;
+  .text-shadow();
 }
 .description-text-size-1() {
   font-family: @body-font-family;
@@ -63,7 +71,7 @@
   font-family: @headline-font-family;
   font-size: 18px;
   line-height: 24px;
-  text-shadow: 0px 4px 2px @custom-color;
+  .text-shadow();
 }
 
 // Body text defaults
@@ -77,7 +85,7 @@
   font-family: @headline-font-family;
   font-size: 20px;
   line-height: 26px;
-  text-shadow: 0px 4px 2px @custom-color;
+  .text-shadow();
 }
 
 .body-text() {
@@ -112,7 +120,7 @@ body {
   }
 }
 
-// p { font-size: 16px; }
+
 .asset-title {
   .title-text();
 }
@@ -120,12 +128,12 @@ body {
 
 a.link-btn { margin-right: 10px !important; }
 
-
-
 .pplr-icon {
+  padding: 15px !important;
+  font-size: 24px;
   color: @white;
-  &:hover { color: darken(@white, 16%); }
-  text-shadow: 0px 4px 2px @custom-color;
+  background-color: lighten(@custom-color, 30%);
+  .text-shadow-dark();
 }
 
 .imagegroup-logo-container {
@@ -228,7 +236,7 @@ a.link-btn { margin-right: 10px !important; }
 .columnizer-col.columnizer-col1 {
   background-color: @large-asset-background;
   #populr > .link-button(@large-alt-custom-color);
-  #populr > .icon(@large-alt-custom-color);
+  // #populr > .icon(@large-alt-custom-color);
 }
 
 .columnizer-cols2 {
@@ -236,12 +244,12 @@ a.link-btn { margin-right: 10px !important; }
     &:first-child {
       background-color: @light-background-color-palette;
       #populr > .link-button(@light-alt-custom-color);
-      #populr > .icon(@light-alt-custom-color);
+      // #populr > .icon(@light-alt-custom-color);
     }
     .asset-container + .asset-container {
       background-color: @mid-background-color-palette;
       #populr > .link-button(@mid-alt-custom-color);
-      #populr > .icon(@mid-alt-custom-color);
+      // #populr > .icon(@mid-alt-custom-color);
     }
   }
 }
@@ -252,12 +260,12 @@ a.link-btn { margin-right: 10px !important; }
     .asset-container:first-child, .asset-container + .asset-container + .asset-container {
       background-color: @light-background-color-palette;
       #populr > .link-button(@light-alt-custom-color);
-      #populr > .icon(@light-alt-custom-color);
+      // #populr > .icon(@light-alt-custom-color);
     }
     .asset-container + .asset-container {
       background-color: @mid-background-color-palette;
       #populr > .link-button(@mid-alt-custom-color);
-      #populr > .icon(@mid-alt-custom-color);
+      // #populr > .icon(@mid-alt-custom-color);
     }
   }
 }
@@ -349,6 +357,7 @@ a.link-btn { margin-right: 10px !important; }
 // Document asset styling
 .asset-type-documentgroup {
   .asset-inner { padding: 30px; }
+  .document-title-text { &:hover { .font-color(@custom-color) } }
 }
 .asset.asset-type-documentgroup.asset-size-1 {
   .document-container {
@@ -436,6 +445,9 @@ a.link-btn { margin-right: 10px !important; }
     border-radius: 50%;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
+    color: @white !important;
+    background-color: lighten(@custom-color, 30%);
+    .text-shadow-dark();
     i {
       margin-left: -2px;
       font-style: normal !important;
@@ -491,36 +503,29 @@ a.link-btn { margin-right: 10px !important; }
 
   // image asset fix for mobile
   .asset.asset-type-imagegroup.asset-size-1 .imagegroup-container { margin-top: -180px; }
-  .asset.asset-type-imagegroup.asset-size-2 {
-    .populr-image-slider {
-      max-height: 353px;
-    }
-    .imagegroup-container {
-      margin-top: -180px;
-    }
+  .asset.asset-type-imagegroup.asset-size-2 .populr-image-slider { max-height: 353px; }
+  .asset.asset-type-imagegroup.asset-size-3 .populr-image-slider { height: 230px; }
+
+  .columnizer-row-inner .asset-type-documentgroup.asset-size-1 .documents .document-container {
+    margin-right: 0;
+    margin-left: 20px;
   }
-  .asset.asset-type-imagegroup.asset-size-3 {
-    .populr-image-slider {
-      height: 230px;
-    }
-    .imagegroup-container {
-      margin-top: -180px;
-    }
+  .columnizer-row-inner .asset-type-documentgroup.asset-size-2 .documents .document-container {
+    width: 390px;
+    .download-icon-background { margin-right: 0; }
   }
   .columnizer-row-inner .asset-container:nth-child(odd) .asset.asset-type-documentgroup.asset-size-3 .documents .document-container {
-    width: 300px;
-    margin-right: 30px;
+    width: 320px;
     .document-title-text {
-      width: 210px;
+      width: 230px;
+      margin-right: 20px;
     }
-  }
-  .columnizer-row-inner .asset-container:nth-child(even) .asset.asset-type-documentgroup.asset-size-3 .documents .document-container {
-    margin-right: 30px;
   }
 
   .description, .body, .description li, .body li { font-size: 14px !important; }
   .asset-title, .description, .body, .description li, .body li { text-align: left !important; }
 }
+
 @media screen and (max-width: 600px) {
   .columnizer-row-inner, #banner, #banner-color { max-width: 500px; }
   .columnizer-col { margin:5 0 !important; }
@@ -532,8 +537,9 @@ a.link-btn { margin-right: 10px !important; }
     font-size: 20px !important;
     text-align: left !important;
   }
+  .zoom-glass { display: none; }
   .has-logo.has-title #pop-logo { margin: -10px 0 0 0; }
   .download-container { margin-right: 0; }
   .download-icon-background { margin-right: 0; }
-  .document-title-text { margin-left: 30px; width: 280px; }
+  .columnizer-row-inner .asset-container:nth-child(odd) .asset.asset-type-documentgroup.asset-size-3 .documents .document-container { width: 320px; }
 }

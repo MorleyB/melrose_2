@@ -7,49 +7,9 @@
 @large-asset-background: darken(@custom-color, 9%);
 @background-icon-color: darken(@custom-color, 20%);
 
-@light-alt-custom-color: #fff;
-.light-alt-background-color(@color-param) when(luma(@color-param) > 75%) {
-  @light-alt-custom-color: darken(desaturate(@custom-color, 15%), 10%);
-}
-.light-alt-background-color(@color-param) when(luma(@color-param) =< 75%) {
-  @light-alt-custom-color: lighten(saturate(@custom-color, 15%), 10%);
-}
-
-
-@mid-alt-custom-color: #fff;
-.mid-alt-background-color(@color-param) when(luma(@color-param) > 75%) {
-  @mid-alt-custom-color: darken(desaturate(@custom-color, 15%), 16%);
-}
-.mid-alt-background-color(@color-param) when(luma(@color-param) =< 75%) {
-  @mid-alt-custom-color: lighten(saturate(@custom-color, 15%), 16%);
-}
-
-
-@large-alt-custom-color: #fff;
-.large-alt-background-color(@color-param) when(luma(@color-param) > 75%) {
-  @large-alt-custom-color: darken(desaturate(@custom-color, 15%), 15%);
-}
-.large-alt-background-color(@color-param) when(luma(@color-param) =< 75%) {
-  @large-alt-custom-color: lighten(saturate(@custom-color, 15%), 15%);
-}
-
-
-.light-alt-background-color(@light-background-color-palette);
-.mid-alt-background-color(@mid-background-color-palette);
-.large-alt-background-color(@large-asset-background);
-
-
 
 body {
 	background-color: @background-color-palette !important;
-}
-
-.icon-cloud-download {
-	color: @white !important;
-  text-shadow: 0px 4px 2px darken(@custom-color, 20%)
-}
-.download-icon-background {
-  background-color: lighten(@custom-color, 5%) !important;
 }
 
 a {
@@ -57,6 +17,6 @@ a {
   &:hover { color: lighten(@link-color, 2%) !important; }
 }
 
-.document-title-text { &:hover { color: darken(@white, 60%) !important; } }
-
-
+.download-icon-background, .pplr-icon {
+  background-color: lighten(@custom-color, 2%) !important;
+}
