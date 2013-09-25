@@ -14,7 +14,7 @@
   <!-- dummyContentLength: specify how much dummy text appears within each asset -->
   <!-- Value can be set to short, medium or long -->
   <meta itemprop="dummyContentLength" content="medium">
-  <meta itemprop="backgroundContainer" content="#banner-color">
+  <meta itemprop="backgroundContainer" content="#banner">
 
   <!-- 
     Default background images
@@ -23,8 +23,6 @@
     Style values: fill, tile, fixed
     Average color can be computed by opening an image in Photoshop and shrinking it down to 1 pixel
   -->
-
-  <!-- <meta itemprop="defaultBackground" content="/images/bike.jpg" data-width="960" data-height="500" data-position="nw" data-style="fill" data-color="#311036"> -->
 
   <!--
     Theme styles
@@ -55,7 +53,7 @@
        prevent issues with quote escaping and invalid markup. -->
   <script id="theme" type="text/x-handlebars-template">
     <div id="banner">
-      <div id="banner-color"></div>
+    <div id="banner-color"></div>
       {{inline_logo_title max_width=250 max_height=130}}
     </div>
 
