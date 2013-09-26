@@ -331,7 +331,7 @@ a.link-btn { margin-right: 10px !important; }
 
 .asset.asset-type-imagegroup {
   .asset-inner {
-    &:hover, .aloha-active & {
+    &:hover, &:focus, .aloha-active & {
       .populr-image-slider img {
         .opacity(25);
       }
@@ -357,7 +357,10 @@ a.link-btn { margin-right: 10px !important; }
 // Document asset styling
 .asset-type-documentgroup {
   .asset-inner { padding: 30px; }
-  .document-title-text { &:hover { .font-color(@custom-color) } }
+  .document-title-text {
+    margin-top: 10px;
+    &:hover { .font-color(@custom-color) }
+  }
 }
 .asset.asset-type-documentgroup.asset-size-1 {
   .document-container {
