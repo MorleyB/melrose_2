@@ -1,0 +1,19 @@
+@custom-color: #131f44 !important;
+
+@background-color-palette: @custom-color;
+@light-background-color-palette: lighten(@mid-background-color-palette, 3%);
+@mid-background-color-palette: lighten(@custom-color, 10%);
+@large-asset-background: darken(@mid-background-color-palette, 3%);
+@background-icon-color: @custom-color;
+
+
+body {
+	background-color: @custom-color !important;
+}
+
+a {
+  color:@link-color !important;
+  &:hover { color: lighten(@link-color, 8%) !important; }
+}
+
+

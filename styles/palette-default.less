@@ -1,24 +1,21 @@
-@custom-color: #361241 !important;
-
-
-@large-asset-background: #502F62;
-@background-icon-color: lighten(#7B4A8C, 10%);
+@custom-color: #ddd5c6 !important;
 
 @background-color-palette: @custom-color;
-@light-background-color-palette: #815291;
-@mid-background-color-palette: #52295F;
 
-body { background-color: @background-color-palette !important}
+@large-asset-background: darken(@custom-color, 7%);
+@light-background-color-palette: darken(@custom-color, 3%);
+@mid-background-color-palette: darken(@custom-color, 5%);
+@background-icon-color: @custom-color;
 
-.download-icon-background {
-  background-color: @background-icon-color !important;
+
+body {
+	background-color: @custom-color !important;
 }
+
 
 a {
-  color: @link-color;
-  &:hover { color: lighten(@link-color, 5%) !important; }
+  color:@link-color !important;
+  &:hover { color: lighten(@link-color, 8%) !important; }
 }
 
-.pplr-icon {
-  background-color: @background-icon-color !important;
-}
+
