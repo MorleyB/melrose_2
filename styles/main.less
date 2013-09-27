@@ -546,11 +546,6 @@ a.link-btn { margin-right: 10px !important; }
 }
 
 @media screen and (max-width: 520px) {
-  // disable hover for smaller screen devices
-  // .hover {
-  //   -webkit-user-select: none;
-  //   -webkit-touch-callout: none;
-  // }
 
   h1#pop-title {
     font-size: 20px !important;
@@ -569,5 +564,13 @@ a.link-btn { margin-right: 10px !important; }
   .columnizer-row-inner .asset-container .asset.asset-type-documentgroup.asset-size-3 .documents .document-container {
     width: 320px !important;
     .document-title-text { width: 240px !important; }
+  }
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  // disable hover for smaller screen devices
+  .hover {
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
   }
 }
