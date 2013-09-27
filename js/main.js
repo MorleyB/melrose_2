@@ -48,6 +48,12 @@
     $('.columnizer-row .asset').live('destroy', function() {
       $(this).find('.asset').css('min-height', '');
     });
+
+    // extend hover effect on images for touch devices
+    $('.hover').bind('touchstart touchend', function(e) {
+      e.preventDefault();
+      $(this).toggleClass('hover-effect');
+    });
   });
 
 }).call(this);

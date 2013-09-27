@@ -306,7 +306,7 @@ a.link-btn { margin-right: 10px !important; }
 
 .asset.asset-type-imagegroup {
   .asset-inner {
-    &:hover, .aloha-active & {
+    &:hover, .hover-effect, .aloha-active & {
       .populr-image-slider img {
         .opacity(25);
       }
@@ -334,7 +334,7 @@ a.link-btn { margin-right: 10px !important; }
   .asset-inner { padding: 30px; }
   .document-title-text {
     margin-top: 10px;
-    &:hover { .font-color(@custom-color) }
+    &:hover, .hover-effect { .font-color(@custom-color) }
   }
 }
 .asset.asset-type-documentgroup.asset-size-1 {
@@ -546,6 +546,12 @@ a.link-btn { margin-right: 10px !important; }
 }
 
 @media screen and (max-width: 520px) {
+  // disable hover for smaller screen devices
+  .hover {
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+  }
+
   h1#pop-title {
     font-size: 20px !important;
     text-align: left !important;
