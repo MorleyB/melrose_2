@@ -554,6 +554,14 @@ a.link-btn { margin-right: 10px !important; }
   .has-logo.has-title #pop-logo { margin: -10px 0 0 0; }
   .download-container { margin-right: 0; }
   .download-icon-background { margin-right: 0; }
-  .columnizer-row-inner .asset-container:first-child .asset.asset-type-documentgroup.asset-size-3 .documents .document-container,
-  .columnizer-row-inner .asset-container:first-child + .asset-container + .asset-container .asset.asset-type-documentgroup.asset-size-3 .documents .document-container { width: 320px; }
+  .columnizer-row-inner .asset-type-documentgroup.asset-size-2 .documents {
+    .document-container {
+      width: 340px !important;
+      .document-title-text { width: 260px !important; }
+    }
+  }
+  .columnizer-row-inner .asset-container .asset.asset-type-documentgroup.asset-size-3 .documents .document-container {
+    width: 320px !important;
+    .document-title-text { width: 240px !important; }
+  }
 }
