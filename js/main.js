@@ -54,6 +54,10 @@
       e.preventDefault();
       $(this).toggleClass('hover-effect');
     });
-  });
+
+    // click glass and trigger the lightbox
+    $( ".zoom-glass" ).on( "click", function() {
+      $( ".populr-image-slider" ).trigger( "click" );
+    });
 
 }).call(this);
