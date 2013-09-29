@@ -552,7 +552,12 @@ a.link-btn { margin-right: 10px !important; }
     text-align: left !important;
   }
   .zoom-glass { display: none; }
-  .has-logo.has-title #pop-logo { margin: -10px 0 0 0; }
+  .has-logo.has-title #pop-logo {
+    margin: 20px 0 0 0;
+    float: none;
+    position: relative;
+  }
+  #pop-logo { margin-top: 10%; }
   .download-container { margin-right: 0; }
   .download-icon-background { margin-right: 0; }
   .columnizer-row-inner .asset-type-documentgroup.asset-size-2 .documents {
@@ -572,5 +577,16 @@ a.link-btn { margin-right: 10px !important; }
   .hover {
     -webkit-user-select: none;
     -webkit-touch-callout: none;
+  }
+  #banner { margin: 0 auto; }
+  .has-logo.has-title #inner-inline-logo-title { display: table;  width: 100% !important; }
+  #pop-logo {
+    float: none;
+    margin: 15px auto;
+    position: relative;
+  }
+  #pop-title {
+    margin-top: -75px;
+    overflow: auto;
   }
 }
