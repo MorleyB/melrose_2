@@ -570,14 +570,6 @@ a.link-btn { margin-right: 10px !important; }
     width: 320px !important;
     .document-title-text { width: 240px !important; }
   }
-}
-
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-  // disable hover for smaller screen devices
-  .hover {
-    -webkit-user-select: none;
-    -webkit-touch-callout: none;
-  }
   #banner { margin: 0 auto; }
   .has-logo.has-title #inner-inline-logo-title { display: table;  width: 100% !important; }
   #pop-logo {
@@ -588,5 +580,13 @@ a.link-btn { margin-right: 10px !important; }
   #pop-title {
     margin-top: -75px;
     overflow: auto;
+  }
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  // disable hover for smaller screen devices
+  .hover {
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
   }
 }
