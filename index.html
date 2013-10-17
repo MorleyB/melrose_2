@@ -14,7 +14,6 @@
   <!-- dummyContentLength: specify how much dummy text appears within each asset -->
   <!-- Value can be set to short, medium or long -->
   <meta itemprop="dummyContentLength" content="medium">
-  <meta itemprop="backgroundContainer" content="#banner:first-child">
   <!-- <meta itemprop="defaultBackground" content="/images/sky.jpg" data-position="c" data-style="tile" data-color="#564a4a"> -->
   <!--
     Default background images
@@ -23,22 +22,22 @@
     Style values: fill, tile, fixed
     Average color can be computed by opening an image in Photoshop and shrinking it down to 1 pixel
   -->
-
+<!--   <meta itemprop="backgroundContainer" content="#header:first-child"> -->
   <!--
     Theme styles
     The Custom style presents Populr's end users with a color picker that sets the @custom-color variable
   -->
-  <!-- <meta itemprop="palette" content="palette-default" title="Default" data-preview="#fff,#000"> -->
-  <!-- <meta itemprop="palette" content="palette-custom" data-preview="custom"> -->
-  <meta itemprop="palette" content="palette-default" title="Default" data-preview="#F5EEE2">
-  <meta itemprop="palette" content="palette-white" title="White" data-preview="#ffffff">
-  <meta itemprop="palette" content="palette-charcoal" title="Charcoal" data-preview="#413D3D">
+  <meta itemprop="palette" content="palette-default" title="Default" data-preview="#361241">
+  <meta itemprop="palette" content="palette-seafoam" title="SeaFoam" data-preview="#47b39d">
+<!--   <meta itemprop="palette" content="palette-charcoal" title="Charcoal" data-preview="#413D3D">
   <meta itemprop="palette" content="palette-purple" title="Purple" data-preview="#361241">
-  <meta itemprop="palette" content="palette-black" title="Black" data-preview="#000000">
+  <meta itemprop="palette" content="palette-black" title="Black" data-preview="#000000"> -->
   <meta itemprop="palette" content="palette-custom" title="Custom" data-preview="custom">
 
   <!-- Add any styles your theme requires here -->
   <link rel="stylesheet/less" type="text/css" href="/styles/main.less">
+  <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
+
 
   <!-- This script loads the Populr theming engine. Populr will automatically remove it at runtime. -->
   <script src="http://populr.me/assets/developers/themer.js"></script>
@@ -52,154 +51,170 @@
   <!-- Put your theme's HTML inside this script tag. The script tag will
        prevent issues with quote escaping and invalid markup. -->
   <script id="theme" type="text/x-handlebars-template">
-    <div id="banner">
-    <div id="banner-color"></div>
-      {{inline_logo_title max_width=250 max_height=130}}
+    <div id="header">
+      {{logo max_width=120 max_height=60}}
+      {{pop_links}}
     </div>
 
-    {{#region "columnizer" id="main-region" max_cols="3" max_auto_assets="0" dummy_content="T-1|T-1,T-1|T-1,T-1,T-1|I-1|I-2|I-1,I-2|I-1,I-2,I-3|V-1|V-2|V-1,V-2|V-1,V-2,V-3|D-1|D-3|D-1,D-3|D-1,D-2,D-3|E-1|E-2|E-1,E-2|E-1,E-2,E-3"}}
+    <div id="header-title">
+      <div id="header-title-inner">{{{title}}}</div>
+    </div>
 
-      {{#asset "text" size="1"}}
-        {{{title}}}
-        {{{body}}}
-      {{/asset}}
 
-      {{#asset "text" size="2"}}
-        {{{title}}}
-        {{{body}}}
-      {{/asset}}
+      {{#region "columnizer" id="main-region" max_cols="3" max_auto_assets="0" dummy_content="T-1|T-1,T-1|T-1,T-1,T-1|I-1|I-2|I-1,I-2|I-1,I-2,I-3|V-1|V-2|V-1,V-2|V-1,V-2,V-3|D-1|D-3|D-1,D-3|D-1,D-2,D-3|E-1|E-2|E-1,E-2|E-1,E-2,E-3"}}
 
-      {{#asset "text" size="3"}}
-        {{{title}}}
-        {{{body}}}
-      {{/asset}}
+        {{#asset "text" size="1"}}
+          {{{title}}}
+          {{{body}}}
+        {{/asset}}
 
-      {{#asset "imagegroup" size="1"}}
-        {{#if lightbox_enabled}}
-          <div class="zoom-glass"><i class="icon-search icon-2x"></i><p class="zoom-text">ZOOM</p></div>
-        {{else}}
-        {{/if}}
-        {{{imageslider images width="960" height="360" crop-single=true cropping-enabled=false}}}
-        <div class="imagegroup-container clearfix">
-          <div class="imagegroup-text-container">
+        {{#asset "text" size="2"}}
+          <div class="innermost">
+            {{{title}}}
+            {{{body}}}
+          <div>
+        {{/asset}}
+
+        {{#asset "text" size="3"}}
+          <div class="innermost">
+            {{{title}}}
+            {{{body}}}
+          <div>
+        {{/asset}}
+
+        {{#asset "imagegroup" size="1"}}
+          {{#if lightbox_enabled}}
+            <div class="zoom-glass"><i class="icon-search icon-2x"></i><p class="zoom-text">ZOOM</p></div>
+          {{else}}
+          {{/if}}
+          {{{imageslider images width="960" height="230" crop-single=true cropping-enabled=false}}}
+          <div class="imagegroup-container clearfix">
+            <div class="imagegroup-text-container">
+              {{{title}}}
+              {{{description}}}
+            </div>
+          </div>
+        {{/asset}}
+
+
+        {{#asset "imagegroup" size="2"}}
+          {{#if lightbox_enabled}}
+            <div class="zoom-glass"><i class="icon-search icon-2x"></i><p class="zoom-text">ZOOM</p></div>
+          {{else}}
+          {{/if}}
+          {{{imageslider images width="476" height="353" crop-single=true cropping-enabled=false}}}
+
+          <div class="imagegroup-container">
+            <div class="imagegroup-text-container">
+              {{{title}}}
+              {{{description}}}
+            </div>
+          </div>
+        {{/asset}}
+
+
+        {{#asset "imagegroup" size="3"}}
+          {{#if lightbox_enabled}}
+            <div class="zoom-glass"><i class="icon-search icon-2x"></i><p class="zoom-text">ZOOM</p></div>
+          {{else}}
+          {{/if}}
+          <div class="small-image">{{{imageslider images width="234" height="230" crop-single=true cropping-enabled=false}}}</div>
+          <div class="middle-image">{{{imageslider images width="476" height="230" crop-single=true cropping-enabled=false}}}</div>
+
+          <div class="imagegroup-container">
+            <div class="imagegroup-text-container">
+              {{{title}}}
+              {{{description}}}
+            </div>
+          </div>
+        {{/asset}}
+
+
+
+        {{#asset "documentgroup" size="1"}}
+          {{{title}}}
+          {{{description}}}
+          <ul class="documents clearfix">
+            {{#documents}}
+            <div class="document-container clearfix">
+              {{!--  The i tag gets styled by Font Awesome, which Populr pulls in automatically. --}}
+              <li><a href="{{original_url}}">
+                <div class="download-icon-background"><i class="icon-cloud-download icon-2x" /></div>
+                <div class="document-title-text">{{title}}</div>
+              </a></li>
+            </div>
+            {{/documents}}
+          </ul>
+        {{/asset}}
+
+        {{#asset "documentgroup" size="2"}}
+          <div class="innermost">
+            {{{title}}}
+            {{{description}}}
+            <ul class="documents clearfix">
+              {{#documents}}
+              <div class="document-container clearfix">
+                {{!--  The i tag gets styled by Font Awesome, which Populr pulls in automatically. --}}
+                <li><a href="{{original_url}}">
+                  <div class="download-icon-background"><i class="icon-cloud-download icon-2x" /></div>
+                  <div class="document-title-text">{{title}}</div>
+                </a></li>
+              </div>
+              {{/documents}}
+            </ul>
+          </div>
+        {{/asset}}
+
+        {{#asset "documentgroup" size="3"}}
+          <div class="innermost">
+            {{{title}}}
+            {{{description}}}
+            <ul class="documents clearfix">
+              {{#documents}}
+              <div class="document-container clearfix">
+                {{!--  The i tag gets styled by Font Awesome, which Populr pulls in automatically. --}}
+                <li><a href="{{original_url}}">
+                  <div class="download-icon-background"><i class="icon-cloud-download icon-2x" /></div>
+                  <div class="document-title-text">{{title}}</div>
+                </a></li>
+              </div>
+              {{/documents}}
+            </ul>
+          </div>
+        {{/asset}}
+
+        {{#asset "embedgroup" size="1" width="960"}}
+          {{#embeds}}
+            <div class="embed">{{{html}}}</div>
+          {{/embeds}}
+          {{{title}}}
+          {{{description}}}
+        {{/asset}}
+
+        {{#asset "embedgroup" size="2" width="476"}}
+          {{#embeds}}
+            <div class="embed">{{{html}}}</div>
+          {{/embeds}}
+          <div class="embed-container">
             {{{title}}}
             {{{description}}}
           </div>
-        </div>
-      {{/asset}}
+        {{/asset}}
 
-
-      {{#asset "imagegroup" size="2"}}
-        {{#if lightbox_enabled}}
-          <div class="zoom-glass"><i class="icon-search icon-2x"></i><p class="zoom-text">ZOOM</p></div>
-        {{else}}
-        {{/if}}
-        {{{imageslider images width="480" height="353" crop-single=true cropping-enabled=false}}}
-
-        <div class="imagegroup-container">
-          <div class="imagegroup-text-container">
+        {{#asset "embedgroup" size="3" width="234"}}
+          {{#embeds}}
+            <div class="embed">{{{html}}}</div>
+          {{/embeds}}
+          <div class="embed-container">
             {{{title}}}
             {{{description}}}
           </div>
-        </div>
-      {{/asset}}
+        {{/asset}}
 
+      {{/region}}
 
-      {{#asset "imagegroup" size="3"}}
-        {{#if lightbox_enabled}}
-          <div class="zoom-glass"><i class="icon-search icon-2x"></i><p class="zoom-text">ZOOM</p></div>
-        {{else}}
-        {{/if}}
-        <div class="small-image">{{{imageslider images width="240" height="230" crop-single=true cropping-enabled=false}}}</div>
-        <div class="middle-image">{{{imageslider images width="480" height="230" crop-single=true cropping-enabled=false}}}</div>
-
-        <div class="imagegroup-container">
-          <div class="imagegroup-text-container">
-            {{{title}}}
-            {{{description}}}
-          </div>
-        </div>
-      {{/asset}}
-
-
-
-      {{#asset "documentgroup" size="1"}}
-        {{{title}}}
-        {{{description}}}
-        <ul class="documents clearfix">
-          {{#documents}}
-          <div class="document-container clearfix">
-            {{!--  The i tag gets styled by Font Awesome, which Populr pulls in automatically. --}}
-            <li><a href="{{original_url}}">
-              <div class="document-title-text">{{title}}</div>
-              <div class="download-icon-background"><i class="icon-cloud-download icon-2x" /></div>
-            </a></li>
-          </div>
-          {{/documents}}
-        </ul>
-      {{/asset}}
-
-      {{#asset "documentgroup" size="2"}}
-        {{{title}}}
-        {{{description}}}
-        <ul class="documents clearfix">
-          {{#documents}}
-          <div class="document-container clearfix">
-            {{!--  The i tag gets styled by Font Awesome, which Populr pulls in automatically. --}}
-            <li><a href="{{original_url}}">
-              <div class="document-title-text">{{title}}</div>
-              <div class="download-icon-background"><i class="icon-cloud-download icon-2x" /></div>
-            </a></li>
-          </div>
-          {{/documents}}
-        </ul>
-      {{/asset}}
-
-      {{#asset "documentgroup" size="3"}}
-        {{{title}}}
-        {{{description}}}
-        <ul class="documents clearfix">
-          {{#documents}}
-          <div class="document-container clearfix">
-            {{!--  The i tag gets styled by Font Awesome, which Populr pulls in automatically. --}}
-            <li><a href="{{original_url}}">
-              <div class="document-title-text">{{title}}</div>
-              <div class="download-icon-background"><i class="icon-cloud-download icon-2x" /></div>
-            </a></li>
-          </div>
-          {{/documents}}
-        </ul>
-      {{/asset}}
-
-      {{#asset "embedgroup" size="1" width="920"}}
-        {{#embeds}}
-          <div class="embed">{{{html}}}</div>
-        {{/embeds}}
-        {{{title}}}
-        {{{description}}}
-      {{/asset}}
-
-      {{#asset "embedgroup" size="2" width="430"}}
-        {{#embeds}}
-          <div class="embed">{{{html}}}</div>
-        {{/embeds}}
-        {{{title}}}
-        {{{description}}}
-      {{/asset}}
-
-      {{#asset "embedgroup" size="3" width="266"}}
-        {{#embeds}}
-          <div class="embed">{{{html}}}</div>
-        {{/embeds}}
-        {{{title}}}
-        {{{description}}}
-      {{/asset}}
-
-    {{/region}}
 
     {{sharing}}
-
-    {{pop_links}}
 
   </script>
 </body>

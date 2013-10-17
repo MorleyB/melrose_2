@@ -24,7 +24,7 @@
 */
 
 // @headline-font-family is changed with the Font dropdown 
-@headline-font-family: 'kreonregular', serif;
+@headline-font-family: 'Vollkorn', serif;
 
 // @custom-color is changed with the custome color picker in the Color 
 // dropdown. The color picker will only be available to your users if 
@@ -58,27 +58,33 @@
 @populr-theme-version: 1;
 
 // To use your own grid, edit the following properties as needed.
+
 .columnizer-row-inner {
   margin: 0 auto;
   max-width: 960px;
 }
 .columnizer-col {
-	float: left;
-	margin: 0;
+  float: left;
+  margin: 0;
 
-	.columnizer-cols1 & { width: 960px;	}
-	.columnizer-cols2 & { width: 480px;	}
-	.columnizer-cols3 & {
-    width: 480px;
-    &:first-child { width: 240px; }
-    &:last-child { width: 240px; }
+  .columnizer-cols1 & { width: 960px; }
+  .columnizer-cols2 & {
+    width: 476px;
+    &:first-child { margin-right: 8px; }
+  }
+  .columnizer-cols3 & {
+    width: 476px;
+    &:first-child { margin-right: 8px; width: 234px; }
+    &:last-child { margin-left: 8px;  width: 234px; }
   }
 
-	&:first-child { margin-left: 0; }
-	&:last-child { margin-right: 0; }
+  margin-bottom: 8px;
+  &:first-child { margin-left: 0; }
+  &:last-child { margin-right: 0; }
 }
 
-// ie7 and ie8 grid adjustments
+
+// // ie7 and ie8 grid adjustments
 .lt-ie9 {
   .columnizer-cols3 {
     .columnizer-row-inner {
